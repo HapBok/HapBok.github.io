@@ -1,9 +1,9 @@
 ---
 layout : default
 title : 첫 기록
-cataegories : 개발
+paramlink : /blogs-docs/
 ---
 
 # github.io 학습한 것
 
-룰루랄라
+룰루랄라d

@@ -1,0 +1,16 @@
+---
+---
+
+$body-background: #0b1320;
+$body-foreground: #dce7f1;
+$header: #55e6c1;
+
+@import "{{ site.theme }}";
+
+a {
+    color: #78b9ff;
+}
+
+pre {
+    color: #c5b3ff;
+}

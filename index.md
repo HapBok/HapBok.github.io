@@ -2,7 +2,7 @@
 title : HAPBOK Security Blog
 ---
 
-# HAPBOK Security Blog
+# HAPBOK : KNIGHTS FRONTIER 3
 
 KNIGHTS FRONTIER 3기
 

@@ -1,7 +1,7 @@
 ---
 layout : default
 title : 첫 기록
-paramlink : /blogs-docs/
+paramlink : /blog-docs/
 ---
 
 # github.io 학습한 것

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 공모전 & 자격증
-permalink: /contest-certification/
+permalink: /contest-certificate/
 ---
 
 # 공모전 & 자격증

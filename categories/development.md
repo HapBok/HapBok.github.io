@@ -4,6 +4,6 @@ title: 개발
 permalink: /development/
 ---
 
-# github.io 연습
+# 개발
 
-- 울라라랄
+- 개발 기록

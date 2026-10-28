@@ -1,3 +1,7 @@
 theme: jekyll-theme-hacker
 title: HAPBOK Security Log
 description: Offensive Security와 취약점 분석 학습 기록
+url: "https://hapbok.github.io"
+baseurl: ""
+markdown: kramdown
+permalink: /posts/:title/

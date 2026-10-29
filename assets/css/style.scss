@@ -100,7 +100,10 @@ body.sidebar-open .sidebar-scrim { opacity: 1; pointer-events: auto; }
 
 h1, h2, h3, p { margin-top: 0; }
 h1 { font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -.05em; line-height: 1.05; margin-bottom: 1.7rem; }
-.hero h1 { font-size: calmp(2.8rem, 7vw, 5,5rem); line-height: .92;}
+.hero h1 {
+  font-size: calmp(2.8rem, 7vw, 5.5rem); 
+  line-height: .92;
+}
 h1 span { color: var(--mint); }
 h2 { font-size: clamp(1.55rem, 3vw, 2.35rem); letter-spacing: -.045em; line-height: 1.15; }
 .eyebrow { color: var(--mint); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .72rem; font-weight: 700; letter-spacing: .13em; margin-bottom: .85rem; }

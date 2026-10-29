@@ -20,5 +20,5 @@ category_key: bug-bounty
   {% endfor %}
 </ul>
 {% else %}
-<p class="empty-state">Bug Bounty를 통한 취약점 분석 학습</p>
+<p class="empty-state">Bug Bounty를 통한 취약점 분석 학습 기록을 준비하고 있습니다.</p>
 {% endif %}

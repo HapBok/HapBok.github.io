@@ -189,7 +189,7 @@ h2 { font-size: clamp(1.55rem, 3vw, 2.35rem); letter-spacing: -.045em; line-heig
 
 /* 관심 분야 강조 박스 */
 .focus-box {
-  background: rgba(87, 232, 192, 06);
+  background: rgba(87, 232, 192, .06);
   border-left: 3px solid var(--mint);
   margin-top: 1rem;
   max-width: 430px;
@@ -205,13 +205,13 @@ h2 { font-size: clamp(1.55rem, 3vw, 2.35rem); letter-spacing: -.045em; line-heig
   margin-bottom: .3rem;
 }
 
-.focus-strong {
+.focus-box strong {
   color: var(--mint);
-  display: blok;
+  display: block;
   font-size: 1.1rem;
 }
 
-.focus-box p{
+.focus-box p {
   color: var(--muted);
   font-size: .86rem;
   margin: .35rem 0 0;

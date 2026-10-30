@@ -3,6 +3,7 @@
 .activity-bar, .site-explorer, .page-outline { align-self: start; height: 100svh; position: sticky; top: 0; }
 .activity-bar { align-items: center; background: #12130f; border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: .4rem; padding: .55rem 0; }
 .activity-button { align-items: center; color: var(--muted); display: inline-flex; font-family: var(--mono); font-size: 1.35rem; height: 38px; justify-content: center; position: relative; width: 100%; }
+.activity-button svg { height: 1.05rem; width: 1.05rem; }
 .activity-button:hover, .activity-button:focus, .activity-button.is-active { color: var(--text); }
 .activity-button.is-active::before { background: var(--lime); content: ""; height: 28px; left: 0; position: absolute; top: 5px; width: 2px; }
 .activity-button--menu { background: transparent; border: 0; cursor: pointer; }

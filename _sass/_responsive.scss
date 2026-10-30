@@ -3,6 +3,15 @@
   .page-outline { display: none; }
 }
 
+@media (min-width: 781px) {
+  body.explorer-is-collapsed .app-shell { grid-template-columns: var(--activity-width) 0 minmax(0, 1fr) var(--outline-width); }
+  body.explorer-is-collapsed .site-explorer { border-right-width: 0; opacity: 0; overflow: hidden; padding-inline: 0; pointer-events: none; }
+}
+
+@media (min-width: 781px) and (max-width: 1120px) {
+  body.explorer-is-collapsed .app-shell { grid-template-columns: var(--activity-width) 0 minmax(0, 1fr); }
+}
+
 @media (max-width: 780px) {
   .app-shell { grid-template-columns: var(--activity-width) minmax(0, 1fr); }
   .site-explorer { box-shadow: 12px 0 30px rgba(0, 0, 0, .35); height: 100svh; left: var(--activity-width); position: fixed; top: 0; transform: translateX(-105%); transition: transform .2s ease; width: min(var(--explorer-width), calc(100vw - var(--activity-width))); z-index: 10; }

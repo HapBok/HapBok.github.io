@@ -10,30 +10,41 @@
     triggers.forEach((trigger) => trigger.setAttribute('aria-expanded', String(expanded)));
   };
 
-  const openExplorer = () => {
-    if (!mobile.matches) return;
-    body.classList.add('explorer-is-open');
-    setExpanded(true);
-  };
-
-  const closeExplorer = () => {
+  const closeMobileExplorer = () => {
     body.classList.remove('explorer-is-open');
-    setExpanded(false);
   };
 
-  triggers.forEach((trigger) => trigger.addEventListener('click', () => {
-    body.classList.contains('explorer-is-open') ? closeExplorer() : openExplorer();
-  }));
+  const toggleExplorer = () => {
+    if (mobile.matches) {
+      body.classList.toggle('explorer-is-open');
+      setExpanded(body.classList.contains('explorer-is-open'));
+      return;
+    }
 
-  closeButton?.addEventListener('click', closeExplorer);
-  scrim?.addEventListener('click', closeExplorer);
-  explorer?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeExplorer));
+    body.classList.toggle('explorer-is-collapsed');
+    setExpanded(!body.classList.contains('explorer-is-collapsed'));
+  };
+
+  const syncExplorer = () => {
+    closeMobileExplorer();
+    if (mobile.matches) {
+      body.classList.remove('explorer-is-collapsed');
+      setExpanded(false);
+      return;
+    }
+    setExpanded(!body.classList.contains('explorer-is-collapsed'));
+  };
+
+  triggers.forEach((trigger) => trigger.addEventListener('click', toggleExplorer));
+
+  closeButton?.addEventListener('click', closeMobileExplorer);
+  scrim?.addEventListener('click', closeMobileExplorer);
+  explorer?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileExplorer));
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeExplorer();
+    if (event.key === 'Escape') closeMobileExplorer();
   });
-  mobile.addEventListener('change', () => {
-    if (!mobile.matches) closeExplorer();
-  });
+  mobile.addEventListener('change', syncExplorer);
+  syncExplorer();
 
   const headings = [...document.querySelectorAll('.post-body h2')];
   const outlineItems = [...document.querySelectorAll('.page-outline [data-outline-index]')];
@@ -54,13 +65,30 @@
       item.replaceChildren(link);
     });
 
-    const observer = new IntersectionObserver((entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-      if (visible.length) activate(headings.indexOf(visible[0].target));
-    }, { rootMargin: '-12% 0px -70% 0px', threshold: 0 });
+    const visibleHeadings = headings.slice(0, count);
+    const updateOutline = () => {
+      const chromeHeight = document.querySelector('.editor-chrome')?.getBoundingClientRect().height || 0;
+      const markerLine = chromeHeight + 24;
+      let activeIndex = 0;
 
-    headings.slice(0, count).forEach((heading) => observer.observe(heading));
+      visibleHeadings.forEach((heading, index) => {
+        if (heading.getBoundingClientRect().top <= markerLine) activeIndex = index;
+      });
+      activate(activeIndex);
+    };
+
+    let ticking = false;
+    const requestOutlineUpdate = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        updateOutline();
+        ticking = false;
+      });
+    };
+
+    window.addEventListener('scroll', requestOutlineUpdate, { passive: true });
+    window.addEventListener('resize', requestOutlineUpdate);
+    requestOutlineUpdate();
   }
 })();

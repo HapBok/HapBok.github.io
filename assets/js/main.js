@@ -7,7 +7,11 @@
   const mobile = window.matchMedia('(max-width: 780px)');
 
   const setExpanded = (expanded) => {
-    triggers.forEach((trigger) => trigger.setAttribute('aria-expanded', String(expanded)));
+    triggers.forEach((trigger) => {
+      trigger.setAttribute('aria-expanded', String(expanded));
+      trigger.setAttribute('aria-label', expanded ? '탐색기 숨기기' : '탐색기 열기');
+      trigger.classList.toggle('is-active', expanded);
+    });
   };
 
   const closeMobileExplorer = () => {

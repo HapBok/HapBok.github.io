@@ -1,42 +1,40 @@
 {% assign active_category = page.category_key | default: page.categories.first %}
 <aside class="site-explorer" id="site-explorer" aria-label="문서 탐색기">
-  <div class="explorer-heading"><span class="explorer-label">EXPLORER</span><span class="search-label">SEARCH</span><button class="explorer-close" type="button" aria-label="탐색기 닫기">×</button></div>
+  <div class="explorer-heading">
+    <span class="explorer-label">EXPLORER</span>
+    <span class="search-label" hidden>SEARCH</span>
+    <button class="explorer-close" type="button" aria-label="사이드바 닫기">×</button>
+  </div>
   <nav class="file-tree" aria-label="블로그 문서 목록">
-    <details class="tree-root-folder" open>
-      <summary>⌄&nbsp; HAPBOK-LOG</summary>
-      <div class="tree-root-content">
-        <a class="tree-file{% if page.url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}><span aria-hidden="true">▱</span> welcome.md</a>
-        <details class="tree-folder tree-category" open>
-          <summary>⌄&nbsp; 개발</summary>
-          {% for post in site.categories.development %}<a class="tree-post{% if page.url == post.url %} is-current{% endif %}" href="{{ post.url | relative_url }}">└ {{ post.title }}</a>{% endfor %}
-        </details>
-        <details class="tree-folder tree-category" open>
-          <summary>⌄&nbsp; CTF · Wargame</summary>
-          {% for post in site.categories.ctf %}<a class="tree-post{% if page.url == post.url %} is-current{% endif %}" href="{{ post.url | relative_url }}">└ {{ post.title }}</a>{% endfor %}
-        </details>
-        <details class="tree-folder tree-category" open>
-          <summary>⌄&nbsp; BugBounty</summary>
-          {% for post in site.categories['bug-bounty'] %}<a class="tree-post{% if page.url == post.url %} is-current{% endif %}" href="{{ post.url | relative_url }}">└ {{ post.title }}</a>{% endfor %}
-        </details>
-        <details class="tree-folder tree-category" open>
-          <summary>⌄&nbsp; 블로그 · 기술문서</summary>
-          {% for post in site.categories['blog-docs'] %}<a class="tree-post{% if page.url == post.url %} is-current{% endif %}" href="{{ post.url | relative_url }}">└ {{ post.title }}</a>{% endfor %}
-        </details>
-        <details class="tree-folder tree-category" open>
-          <summary>⌄&nbsp; 논문 · 컨퍼런스</summary>
-          {% for post in site.categories['analysis-conference'] %}<a class="tree-post{% if page.url == post.url %} is-current{% endif %}" href="{{ post.url | relative_url }}">└ {{ post.title }}</a>{% endfor %}
-        </details>
-        <details class="tree-folder tree-category" open>
-          <summary>⌄&nbsp; 공모전 · 자격증</summary>
-          {% for post in site.categories['contest-certificate'] %}<a class="tree-post{% if page.url == post.url %} is-current{% endif %}" href="{{ post.url | relative_url }}">└ {{ post.title }}</a>{% endfor %}
-        </details>
-      </div>
-    </details>
+    <div class="tree-root-row">
+      <button class="tree-toggle" type="button" aria-expanded="true" aria-controls="tree-root-content" aria-label="HAPBOK-LOG 접기">
+        <svg aria-hidden="true" viewBox="0 0 16 16"><path d="m6 4 4 4-4 4"/></svg>
+      </button>
+      <span>HAPBOK-LOG</span>
+    </div>
+    <div class="tree-root-content" id="tree-root-content">
+      <a class="tree-file{% if page.url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}><span aria-hidden="true">▱</span> welcome.md</a>
+      {% for category in site.data.categories %}
+      <section class="tree-category" data-category="{{ category.key }}">
+        <div class="tree-category-row{% if active_category == category.key %} is-active{% endif %}">
+          <button class="tree-toggle" type="button" aria-expanded="true" aria-controls="tree-{{ category.key }}" aria-label="{{ category.title }} 접기">
+            <svg aria-hidden="true" viewBox="0 0 16 16"><path d="m6 4 4 4-4 4"/></svg>
+          </button>
+          <a class="tree-category-link" href="{{ category.url | relative_url }}"{% if page.url == category.url %} aria-current="page"{% endif %}>{{ category.title }}</a>
+        </div>
+        <div class="tree-post-list" id="tree-{{ category.key }}">
+          {% for post in site.categories[category.key] %}
+          <a class="tree-post{% if page.url == post.url %} is-current{% endif %}" href="{{ post.url | relative_url }}"{% if page.url == post.url %} aria-current="page"{% endif %}>{{ post.title | escape }}</a>
+          {% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+    </div>
   </nav>
-  <section class="search-panel" id="site-search" aria-label="게시글 검색" aria-hidden="true">
-    <label class="search-input-label" for="post-search">Search posts</label>
-    <input id="post-search" class="search-input" type="search" placeholder="제목 또는 내용 검색" autocomplete="off">
-    <p class="search-guide">게시글 제목과 본문에서 검색합니다.</p>
+  <section class="search-panel" id="site-search" aria-label="게시글 검색" hidden>
+    <label class="search-input-label" for="post-search">게시글 검색</label>
+    <input id="post-search" class="search-input" type="search" placeholder="제목 또는 내용 검색" autocomplete="off" aria-describedby="search-guide">
+    <p class="search-guide" id="search-guide">제목과 본문에서 검색합니다.</p>
     <div class="search-results" aria-live="polite"></div>
   </section>
   <p class="explorer-foot">Study archive for offensive security.</p>

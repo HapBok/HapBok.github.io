@@ -1,153 +1,122 @@
 (() => {
   const body = document.body;
-  const explorer = document.querySelector('.site-explorer');
-  const scrim = document.querySelector('.explorer-scrim');
-  const explorerTriggers = document.querySelectorAll('.mobile-menu-toggle, .activity-button--explorer');
-  const searchTrigger = document.querySelector('.activity-button--search');
-  const closeButton = document.querySelector('.explorer-close');
+  const sidebar = document.querySelector('.site-explorer');
+  const tree = document.querySelector('.file-tree');
   const searchPanel = document.querySelector('.search-panel');
   const searchInput = document.querySelector('.search-input');
   const searchResults = document.querySelector('.search-results');
+  const explorerLabel = document.querySelector('.explorer-label');
+  const searchLabel = document.querySelector('.search-label');
+  const explorerButton = document.querySelector('.activity-button--explorer');
+  const searchButton = document.querySelector('.activity-button--search');
+  const mobileButton = document.querySelector('.mobile-menu-toggle');
   const mobile = window.matchMedia('(max-width: 780px)');
+  let view = mobile.matches ? 'hidden' : 'explorer';
 
-  const setExplorerExpanded = (expanded) => {
-    explorerTriggers.forEach((trigger) => {
-      trigger.setAttribute('aria-expanded', String(expanded));
-      trigger.setAttribute('aria-label', expanded ? '탐색기 숨기기' : '탐색기 열기');
-      trigger.classList.toggle('is-active', expanded);
+  const setView = (nextView, focusSearch = false) => {
+    view = nextView;
+    const visible = view !== 'hidden';
+    const searching = view === 'search';
+    body.dataset.sidebarView = view;
+    body.classList.toggle('explorer-is-collapsed', !mobile.matches && !visible);
+    body.classList.toggle('explorer-is-open', mobile.matches && visible);
+    sidebar.inert = !visible;
+    sidebar.setAttribute('aria-hidden', String(!visible));
+    tree.hidden = view !== 'explorer';
+    searchPanel.hidden = !searching;
+    explorerLabel.hidden = searching;
+    searchLabel.hidden = !searching;
+
+    [[explorerButton, 'explorer', '탐색기'], [searchButton, 'search', '검색']].forEach(([button, mode, label]) => {
+      button?.setAttribute('aria-expanded', String(view === mode));
+      button?.setAttribute('aria-label', label + (view === mode ? ' 숨기기' : ' 열기'));
+      button?.classList.toggle('is-active', view === mode);
     });
-  };
-
-  const setSearchExpanded = (expanded) => {
-    searchTrigger?.setAttribute('aria-expanded', String(expanded));
-    searchTrigger?.setAttribute('aria-label', expanded ? '검색 닫기' : '검색 열기');
-    searchTrigger?.classList.toggle('is-active', expanded);
-    searchPanel?.setAttribute('aria-hidden', String(!expanded));
-  };
-
-  const closeMobileExplorer = () => {
-    body.classList.remove('explorer-is-open');
-  };
-
-  const toggleExplorer = () => {
-    if (body.classList.contains('explorer-mode-search')) setSearchMode(false);
-
-    if (mobile.matches) {
-      body.classList.toggle('explorer-is-open');
-      setExplorerExpanded(body.classList.contains('explorer-is-open'));
-      return;
-    }
-
-    body.classList.toggle('explorer-is-collapsed');
-    setExplorerExpanded(!body.classList.contains('explorer-is-collapsed'));
-  };
-
-  const syncExplorer = () => {
-    closeMobileExplorer();
-    if (mobile.matches) {
-      body.classList.remove('explorer-is-collapsed');
-      setExplorerExpanded(false);
-      return;
-    }
-    setExplorerExpanded(!body.classList.contains('explorer-is-collapsed'));
+    mobileButton?.setAttribute('aria-expanded', String(visible));
+    mobileButton?.setAttribute('aria-label', visible ? '사이드바 닫기' : '탐색기 열기');
+    if (searching) renderSearchResults(searchInput.value);
+    if (searching && focusSearch) searchInput.focus({ preventScroll: true });
   };
 
   const categoryLabels = {
-    development: '개발',
-    ctf: 'CTF · Wargame',
-    'bug-bounty': 'BugBounty',
-    'blog-docs': '블로그 · 기술문서',
-    'analysis-conference': '논문 · 컨퍼런스',
+    development: '개발', ctf: 'CTF · Wargame', 'bug-bounty': 'BugBounty',
+    'blog-docs': '블로그 · 기술문서', 'analysis-conference': '논문 · 컨퍼런스',
     'contest-certificate': '공모전 · 자격증',
   };
-
   let searchIndex = [];
+  let searchIndexValid = true;
   try {
-    const searchIndexElement = document.getElementById('post-search-index');
-    searchIndex = searchIndexElement ? JSON.parse(searchIndexElement.textContent) : [];
+    searchIndex = JSON.parse(document.getElementById('post-search-index')?.textContent || '[]');
   } catch {
-    searchIndex = [];
+    searchIndexValid = false;
   }
-
-  const normalise = (value) => value.toLocaleLowerCase('ko-KR');
-  const excerpt = (value, limit = 120) => {
-    const compact = value.replace(/\s+/g, ' ').trim();
-    return compact.length > limit ? `${compact.slice(0, limit)}…` : compact;
+  const normalise = (value) => String(value || '').normalize('NFC').toLocaleLowerCase('ko-KR');
+  const excerpt = (post, term) => {
+    const content = String(post.content || post.description || '').replace(/\s+/g, ' ').trim();
+    const match = normalise(content).indexOf(term);
+    const start = Math.max(0, match - 35);
+    const end = Math.min(content.length, Math.max(start + 125, match + term.length + 35));
+    return (start ? '…' : '') + content.slice(start, end) + (end < content.length ? '…' : '');
   };
 
   const renderSearchResults = (query = '') => {
-    if (!searchResults) return;
     searchResults.replaceChildren();
     const term = normalise(query.trim());
-
-    if (!term) {
-      const message = document.createElement('p');
-      message.className = 'search-empty';
-      message.textContent = '검색어를 입력하면 일치하는 기록을 보여줍니다.';
-      searchResults.append(message);
-      return;
-    }
-
-    const matches = searchIndex.filter((post) => normalise(`${post.title} ${post.description} ${post.content}`).includes(term)).slice(0, 20);
-    if (!matches.length) {
-      const message = document.createElement('p');
-      message.className = 'search-empty';
-      message.textContent = '일치하는 게시글이 없습니다.';
-      searchResults.append(message);
-      return;
-    }
-
+    const message = (text) => {
+      const paragraph = document.createElement('p');
+      paragraph.className = 'search-empty';
+      paragraph.textContent = text;
+      searchResults.append(paragraph);
+    };
+    if (!searchIndexValid) return message('검색 정보를 불러오지 못했습니다. 페이지를 새로고침해 주세요.');
+    if (!term) return message('검색어를 입력하면 일치하는 기록을 보여줍니다.');
+    const matches = searchIndex.filter((post) => normalise(post.title + ' ' + post.description + ' ' + post.content).includes(term));
+    if (!matches.length) return message('일치하는 게시글이 없습니다.');
+    message(matches.length + '개의 기록');
     matches.forEach((post) => {
       const result = document.createElement('a');
       result.className = 'search-result';
       result.href = post.url;
-
       const meta = document.createElement('span');
       meta.className = 'search-result-meta';
-      meta.textContent = `${categoryLabels[post.category] || '기록'} · ${post.date}`;
-
+      meta.textContent = (categoryLabels[post.category] || '기록') + ' · ' + post.date;
       const title = document.createElement('strong');
       title.textContent = post.title;
-
       const description = document.createElement('small');
-      description.textContent = excerpt(post.description || post.content);
-
+      description.textContent = excerpt(post, term);
       result.append(meta, title, description);
       searchResults.append(result);
     });
   };
 
-  const setSearchMode = (enabled) => {
-    body.classList.toggle('explorer-mode-search', enabled);
-    setSearchExpanded(enabled);
-
-    if (!enabled) return;
-    body.classList.remove('explorer-is-collapsed');
-    if (mobile.matches) body.classList.add('explorer-is-open');
-    setExplorerExpanded(true);
-    renderSearchResults(searchInput?.value || '');
-    window.setTimeout(() => searchInput?.focus(), 0);
+  explorerButton?.addEventListener('click', () => setView(view === 'explorer' ? 'hidden' : 'explorer'));
+  searchButton?.addEventListener('click', () => setView(view === 'search' ? 'hidden' : 'search', true));
+  mobileButton?.addEventListener('click', () => setView(view === 'hidden' ? 'explorer' : 'hidden'));
+  const closeSidebar = () => {
+    const returnFocus = view === 'search' ? searchButton : explorerButton;
+    setView('hidden');
+    returnFocus?.focus({ preventScroll: true });
   };
-
-  explorerTriggers.forEach((trigger) => trigger.addEventListener('click', toggleExplorer));
-  searchTrigger?.addEventListener('click', () => setSearchMode(!body.classList.contains('explorer-mode-search')));
-  searchInput?.addEventListener('input', (event) => renderSearchResults(event.target.value));
-
-  closeButton?.addEventListener('click', closeMobileExplorer);
-  scrim?.addEventListener('click', closeMobileExplorer);
-  explorer?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileExplorer));
-  searchResults?.addEventListener('click', closeMobileExplorer);
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && body.classList.contains('explorer-mode-search')) {
-      setSearchMode(false);
-      return;
-    }
-    if (event.key === 'Escape') closeMobileExplorer();
+  document.querySelector('.explorer-close')?.addEventListener('click', closeSidebar);
+  document.querySelector('.explorer-scrim')?.addEventListener('click', closeSidebar);
+  sidebar?.addEventListener('click', (event) => {
+    if (mobile.matches && event.target.closest('a')) setView('hidden');
   });
-  mobile.addEventListener('change', syncExplorer);
-  syncExplorer();
-  setSearchExpanded(false);
-
+  searchInput?.addEventListener('input', () => renderSearchResults(searchInput.value));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && view !== 'hidden') closeSidebar();
+  });
+  mobile.addEventListener('change', () => setView(mobile.matches ? 'hidden' : 'explorer'));
+  document.querySelectorAll('.tree-toggle').forEach((button) => {
+    const label = button.getAttribute('aria-label').replace(/ 접기$/, '');
+    button.addEventListener('click', () => {
+      const expanded = button.getAttribute('aria-expanded') !== 'true';
+      button.setAttribute('aria-expanded', String(expanded));
+      button.setAttribute('aria-label', label + (expanded ? ' 접기' : ' 펼치기'));
+      document.getElementById(button.getAttribute('aria-controls')).hidden = !expanded;
+    });
+  });
+  setView(view);
   const headings = [...document.querySelectorAll('.post-body h2')];
   const outlineItems = [...document.querySelectorAll('.page-outline [data-outline-index]')];
 

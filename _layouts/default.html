@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   </head>
-  <body data-page-kind="{{ page.layout | default: 'page' }}" data-category="{{ page.category_key | default: '' }}">
+  {% assign active_category = page.category_key | default: page.categories.first %}
+  <body data-page-kind="{{ page.layout | default: 'page' }}" data-category="{{ active_category | default: '' }}">
     <a class="skip-link" href="#content">본문으로 건너뛰기</a>
 
     <div class="app-shell">

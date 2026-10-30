@@ -1,7 +1,7 @@
 {% if page.outline and page.outline.size > 0 %}
 <aside class="page-outline" aria-label="이 문서에서">
   <p class="outline-heading">OUTLINE</p>
-  <ol>{% for item in page.outline %}<li>{{ item }}</li>{% endfor %}</ol>
+  <ol>{% for item in page.outline %}<li class="{% if forloop.first %}is-active{% endif %}" data-outline-index="{{ forloop.index0 }}">{{ item }}</li>{% endfor %}</ol>
 </aside>
 {% else %}
 <aside class="page-outline page-outline--empty" aria-hidden="true"></aside>

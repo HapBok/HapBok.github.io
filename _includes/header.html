@@ -1,3 +1,16 @@
+{% assign active_category = page.category_key | default: page.categories.first %}
+{% assign breadcrumb_directory = page.directory_label %}
+{% if breadcrumb_directory == nil or breadcrumb_directory == '' %}
+  {% case active_category %}
+    {% when 'development' %}{% assign breadcrumb_directory = 'learning / development' %}
+    {% when 'ctf' %}{% assign breadcrumb_directory = 'learning / ctf-wargame' %}
+    {% when 'bug-bounty' %}{% assign breadcrumb_directory = 'learning / bug-bounty' %}
+    {% when 'blog-docs' %}{% assign breadcrumb_directory = 'archive / blog-docs' %}
+    {% when 'analysis-conference' %}{% assign breadcrumb_directory = 'archive / papers' %}
+    {% when 'contest-certificate' %}{% assign breadcrumb_directory = 'archive / contest-certificate' %}
+  {% endcase %}
+{% endif %}
+
 <header class="editor-chrome">
   <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-explorer" aria-label="탐색기 열기">
     <span></span><span></span><span></span>
@@ -10,9 +23,9 @@
 
   <div class="editor-breadcrumb" aria-label="현재 문서 경로">
     <span>HAPBOK-LOG</span>
-    {% if page.directory_label %}
+    {% if breadcrumb_directory %}
       <span aria-hidden="true">›</span>
-      <span>{{ page.directory_label }}</span>
+      <span>{{ breadcrumb_directory }}</span>
     {% endif %}
     <span aria-hidden="true">›</span>
     <strong>{{ page.file_name | default: 'welcome.md' }}</strong>

@@ -1,33 +1,20 @@
-<header class="site-header">
-  <a class="brand" href="{{ '/' | relative_url }}" aria-label="HAPBOK Security Log 홈">
-    <span class="brand-mark">H.</span>
-    <span>HAPBOK <em>SECURITY LOG</em></span>
-  </a>
-  <div class="header-actions">
-    <a class="github-link" href="https://github.com/HapBok" target="_blank" rel="noreferrer">GitHub ↗</a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-sidebar" aria-label="카테고리 메뉴 열기">
-      <span></span><span></span><span></span>
-    </button>
+<header class="editor-chrome">
+  <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-explorer" aria-label="탐색기 열기">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="editor-tab" aria-current="page">
+    <span class="file-icon" aria-hidden="true">▱</span>
+    <span>{{ page.file_name | default: 'welcome.md' }}</span>
+  </div>
+
+  <div class="editor-breadcrumb" aria-label="현재 문서 경로">
+    <span>HAPBOK-LOG</span>
+    {% if page.directory_label %}
+      <span aria-hidden="true">›</span>
+      <span>{{ page.directory_label }}</span>
+    {% endif %}
+    <span aria-hidden="true">›</span>
+    <strong>{{ page.file_name | default: 'welcome.md' }}</strong>
   </div>
 </header>
-
-<aside class="site-sidebar" id="site-sidebar" aria-label="블로그 탐색">
-  <div class="sidebar-top">
-    <p class="eyebrow">NAVIGATION</p>
-    <button class="sidebar-close" type="button" aria-label="카테고리 메뉴 닫기">×</button>
-  </div>
-  <nav class="sidebar-nav">
-    <a href="{{ '/' | relative_url }}"><span>00</span> Home</a>
-    <a href="{{ '/development/' | relative_url }}"><span>01</span> 개발</a>
-    <a href="{{ '/ctf-wargame/' | relative_url }}"><span>02</span> CTF / Wargame</a>
-    <a href="{{ '/bug-bounty/' | relative_url }}"><span>03</span> Bug Bounty</a>
-    <a href="{{ '/blog-docs/' | relative_url }}"><span>04</span> 블로그 / 기술문서</a>
-    <a href="{{ '/analysis-conference/' | relative_url }}"><span>05</span> 논문 / 컨퍼런스</a>
-    <a href="{{ '/contest-certificate/' | relative_url }}"><span>06</span> 공모전 / 자격증</a>
-  </nav>
-  <div class="sidebar-foot">
-    <p>KNIGHTS FRONTIER · 3기</p>
-    <p>Study archive for offensive security.</p>
-  </div>
-</aside>
-<button class="sidebar-scrim" type="button" aria-label="메뉴 닫기" tabindex="-1"></button>

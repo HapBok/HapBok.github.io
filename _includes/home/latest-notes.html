@@ -1,0 +1,22 @@
+<section class="latest-notes" aria-labelledby="latest-notes-title">
+  <div class="archive-heading">
+    <h2 id="latest-notes-title">Latest notes</h2>
+    <span>recent</span>
+  </div>
+
+  {% if site.posts.size > 0 %}
+    <ol class="archive-list">
+      {% for post in site.posts limit: 5 %}
+        <li class="archive-item">
+          <a href="{{ post.url | relative_url }}">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+            <span class="archive-tags">{% if post.tags and post.tags.size > 0 %}[{{ post.tags | first }}]{% else %}[note]{% endif %}</span>
+            <span class="archive-copy"><strong>{{ post.title }}</strong>{% if post.description %}<small>{{ post.description }}</small>{% endif %}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <p class="empty-state">아직 공개한 학습 기록이 없습니다. 첫 기록을 준비하고 있습니다.</p>
+  {% endif %}
+</section>

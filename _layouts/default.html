@@ -8,12 +8,24 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   </head>
-  <body>
+  <body data-page-kind="{{ page.layout | default: 'page' }}" data-category="{{ page.category_key | default: '' }}">
     <a class="skip-link" href="#content">본문으로 건너뛰기</a>
-    {% include header.html %}
-    <main id="content" class="site-main{% unless page.url == '/' %} inner-page{% endunless %}">
-      {{ content }}
-    </main>
-    {% include footer.html %}
+
+    <div class="app-shell">
+      {% include app/activity-bar.html %}
+      {% include app/explorer.html %}
+
+      <section class="app-workspace" aria-label="문서 작업 영역">
+        {% include header.html %}
+        <main id="content" class="editor-content{% unless page.url == '/' %} editor-content--inner{% endunless %}">
+          {{ content }}
+        </main>
+        {% include footer.html %}
+      </section>
+
+      {% include app/outline.html %}
+    </div>
+
+    <button class="explorer-scrim" type="button" aria-label="탐색기 닫기" tabindex="-1"></button>
   </body>
 </html>

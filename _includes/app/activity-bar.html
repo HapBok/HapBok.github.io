@@ -1,0 +1,7 @@
+<nav class="activity-bar" aria-label="빠른 탐색">
+  <a class="activity-button{% if page.url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}" aria-label="홈"><span aria-hidden="true">▱</span></a>
+  <button class="activity-button activity-button--menu" type="button" aria-expanded="false" aria-controls="site-explorer" aria-label="문서 탐색기 열기"><span aria-hidden="true">⌕</span></button>
+  <a class="activity-button" href="https://github.com/HapBok" target="_blank" rel="noreferrer" aria-label="GitHub 프로필"><span aria-hidden="true">⌘</span></a>
+  <span class="activity-spacer" aria-hidden="true"></span>
+  <a class="activity-button" href="{{ '/blog-docs/' | relative_url }}" aria-label="기술문서"><span aria-hidden="true">▤</span></a>
+</nav>

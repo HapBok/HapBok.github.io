@@ -1,38 +1,37 @@
 (() => {
   const body = document.body;
-  const menuButton = document.querySelector('.menu-toggle');
-  const closeButton = document.querySelector('.sidebar-close');
-  const scrim = document.querySelector('.sidebar-scrim');
-  const sidebar = document.querySelector('.site-sidebar');
-  const desktop = window.matchMedia('(min-width: 1080px)');
+  const explorer = document.querySelector('.site-explorer');
+  const scrim = document.querySelector('.explorer-scrim');
+  const triggers = document.querySelectorAll('.mobile-menu-toggle, .activity-button--menu');
+  const closeButton = document.querySelector('.explorer-close');
+  const mobile = window.matchMedia('(max-width: 780px)');
 
-  const closeMenu = () => {
-    if (desktop.matches) body.classList.add('sidebar-collapsed');
-    else body.classList.remove('sidebar-open');
-    menuButton?.setAttribute('aria-expanded', 'false');
+  const setExpanded = (expanded) => {
+    triggers.forEach((trigger) => trigger.setAttribute('aria-expanded', String(expanded)));
   };
 
-  const openMenu = () => {
-    if (desktop.matches) body.classList.remove('sidebar-collapsed');
-    else body.classList.add('sidebar-open');
-    menuButton?.setAttribute('aria-expanded', 'true');
+  const openExplorer = () => {
+    if (!mobile.matches) return;
+    body.classList.add('explorer-is-open');
+    setExpanded(true);
   };
 
-  menuButton?.addEventListener('click', () => {
-    const isOpen = desktop.matches
-      ? !body.classList.contains('sidebar-collapsed')
-      : body.classList.contains('sidebar-open');
-    isOpen ? closeMenu() : openMenu();
-  });
+  const closeExplorer = () => {
+    body.classList.remove('explorer-is-open');
+    setExpanded(false);
+  };
 
-  closeButton?.addEventListener('click', closeMenu);
-  scrim?.addEventListener('click', closeMenu);
-  sidebar?.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      if (!desktop.matches) closeMenu();
-    });
-  });
+  triggers.forEach((trigger) => trigger.addEventListener('click', () => {
+    body.classList.contains('explorer-is-open') ? closeExplorer() : openExplorer();
+  }));
+
+  closeButton?.addEventListener('click', closeExplorer);
+  scrim?.addEventListener('click', closeExplorer);
+  explorer?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeExplorer));
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeMenu();
+    if (event.key === 'Escape') closeExplorer();
+  });
+  mobile.addEventListener('change', () => {
+    if (!mobile.matches) closeExplorer();
   });
 })();

@@ -1,0 +1,39 @@
+.app-shell { display: grid; grid-template-columns: var(--activity-width) var(--explorer-width) minmax(0, 1fr) var(--outline-width); min-height: 100svh; }
+.activity-bar { align-items: center; background: #12130f; border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: .4rem; padding: .55rem 0; }
+.activity-button { align-items: center; color: var(--muted); display: inline-flex; font-family: var(--mono); font-size: 1.35rem; height: 38px; justify-content: center; position: relative; width: 100%; }
+.activity-button:hover, .activity-button:focus, .activity-button.is-active { color: var(--text); }
+.activity-button.is-active::before { background: var(--lime); content: ""; height: 28px; left: 0; position: absolute; top: 5px; width: 2px; }
+.activity-button--menu { background: transparent; border: 0; cursor: pointer; }
+.activity-spacer { flex: 1; }
+.site-explorer { background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; min-width: 0; padding: .75rem 0 1rem; }
+.explorer-heading { align-items: center; color: var(--text); display: flex; font-size: .78rem; justify-content: space-between; letter-spacing: .04em; padding: 0 1rem .8rem; }
+.explorer-close { background: transparent; border: 0; color: var(--muted); cursor: pointer; display: none; font-size: 1.3rem; line-height: 1; }
+.file-tree { display: grid; font-size: .88rem; gap: .1rem; }
+.tree-root, .tree-folder summary { color: var(--text); }
+.tree-root { padding: .45rem 1rem; }
+.tree-file { color: var(--text); display: block; padding: .43rem 1rem .43rem 1.35rem; }
+.tree-file span { color: var(--muted); display: inline-block; width: 1.2rem; }
+.tree-file:hover, .tree-file:focus { background: #202415; }
+.tree-file.is-active { background: rgba(183, 243, 75, .12); box-shadow: inset 2px 0 0 var(--lime); color: var(--lime); }
+.tree-folder { margin: .15rem 0; }
+.tree-folder summary { cursor: pointer; list-style: none; padding: .4rem 1rem; }
+.tree-folder summary::-webkit-details-marker { display: none; }
+.tree-folder .tree-file { padding-left: 2.35rem; }
+.explorer-foot { border-top: 1px solid var(--border); color: var(--muted); font-family: var(--mono); font-size: .7rem; margin: auto 1rem 0; padding-top: .85rem; }
+.app-workspace { display: flex; flex-direction: column; min-width: 0; }
+.editor-chrome { background: var(--surface); border-bottom: 1px solid var(--border); min-height: 88px; position: sticky; top: 0; z-index: 2; }
+.editor-tab { align-items: center; border-right: 1px solid var(--border); border-top: 2px solid var(--lime); display: inline-flex; font-size: .86rem; gap: .55rem; height: 43px; padding: 0 1.15rem; }
+.file-icon { color: var(--muted); font-size: 1.2rem; }
+.editor-breadcrumb { align-items: center; color: var(--muted); display: flex; font-size: .78rem; gap: .55rem; height: 45px; overflow-x: auto; padding: 0 1.45rem; white-space: nowrap; }
+.editor-breadcrumb strong { color: var(--text); font-weight: 500; }
+.mobile-menu-toggle { display: none; }
+.editor-content { margin: 0 auto; padding: clamp(2.2rem, 5vw, 4.5rem) clamp(1.25rem, 5vw, 4rem); width: min(100%, 1040px); }
+.editor-content--inner { width: min(100%, 920px); }
+.page-outline { background: var(--surface); border-left: 1px solid var(--border); min-width: 0; padding: 1.1rem 1rem; }
+.outline-heading { color: var(--text); font-size: .76rem; letter-spacing: .06em; margin-bottom: .85rem; }
+.page-outline ol { border-left: 1px solid var(--border); list-style: none; margin: 0; padding: 0 0 0 .85rem; }
+.page-outline li { color: var(--muted); font-size: .82rem; line-height: 1.45; margin: 0 0 .7rem; }
+.page-outline li:first-child { color: var(--text); position: relative; }
+.page-outline li:first-child::before { background: var(--lime); content: ""; height: 20px; left: calc(-.85rem - 1px); position: absolute; top: 0; width: 2px; }
+.status-bar { align-items: center; border-top: 1px solid var(--border); color: var(--muted); display: flex; font-family: var(--mono); font-size: .68rem; gap: 1rem; justify-content: space-between; margin-top: auto; padding: .45rem .85rem; }
+.explorer-scrim { display: none; }

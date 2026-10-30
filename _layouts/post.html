@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+{% assign primary_category = page.categories | first %}
+{% case primary_category %}
+  {% when 'development' %}{% assign category_url = '/development/' %}{% assign category_name = '개발' %}
+  {% when 'ctf' %}{% assign category_url = '/ctf-wargame/' %}{% assign category_name = 'CTF / Wargame' %}
+  {% when 'bug-bounty' %}{% assign category_url = '/bug-bounty/' %}{% assign category_name = 'Bug Bounty' %}
+  {% when 'blog-docs' %}{% assign category_url = '/blog-docs/' %}{% assign category_name = '블로그 / 기술문서' %}
+  {% when 'analysis-conference' %}{% assign category_url = '/analysis-conference/' %}{% assign category_name = '논문 / 컨퍼런스' %}
+  {% when 'contest-certificate' %}{% assign category_url = '/contest-certificate/' %}{% assign category_name = '공모전 / 자격증' %}
+  {% else %}{% assign category_url = '/' %}{% assign category_name = '홈' %}
+{% endcase %}
+
+<article class="post-page" data-category="{{ primary_category }}">
+  <a class="back-link" href="{{ category_url | relative_url }}">← {{ category_name }}으로</a>
+  <header class="post-header">
+    <p class="document-kicker">{{ primary_category | default: 'note' }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="post-description">{{ page.description }}</p>{% endif %}
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      {% for tag in page.tags %}<span>{{ tag }}</span>{% endfor %}
+    </div>
+  </header>
+
+  <div class="post-body">
+    {{ content }}
+  </div>
+</article>

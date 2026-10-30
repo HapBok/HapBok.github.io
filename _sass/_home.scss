@@ -1,0 +1,9 @@
+.welcome-document { max-width: 800px; }
+.document-kicker { color: var(--amber); font-size: .76rem; letter-spacing: .08em; margin-bottom: .8rem; text-transform: uppercase; }
+.welcome-lead { border-bottom: 1px solid var(--border); color: var(--text); font-size: clamp(1.05rem, 1.8vw, 1.25rem); padding-bottom: 1.4rem; }
+.welcome-copy { color: var(--text); font-size: 1rem; line-height: 1.9; margin: 1.55rem 0 0; max-width: 660px; }
+.focus-box { border: 1px solid var(--lime); display: inline-block; margin-top: .25rem; max-width: 520px; padding: .7rem .95rem; }
+.focus-label { color: var(--amber); display: block; font-size: .68rem; letter-spacing: .1em; margin-bottom: .15rem; }
+.focus-box strong { color: var(--lime); display: block; font-family: var(--mono); font-size: 1.05rem; font-weight: 500; }
+.focus-box p { color: var(--muted); font-size: .84rem; margin: .35rem 0 0; }
+.latest-notes { border-top: 1px solid var(--border); margin-top: 2.7rem; max-width: 850px; padding-top: 1.45rem; }

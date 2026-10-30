@@ -1,0 +1,20 @@
+<aside class="site-explorer" id="site-explorer" aria-label="문서 탐색기">
+  <div class="explorer-heading"><span>EXPLORER</span><button class="explorer-close" type="button" aria-label="탐색기 닫기">×</button></div>
+  <nav class="file-tree" aria-label="블로그 문서 목록">
+    <a class="tree-root" href="{{ '/' | relative_url }}">⌄&nbsp; HAPBOK-LOG</a>
+    <a class="tree-file{% if page.url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}><span aria-hidden="true">▱</span> welcome.md</a>
+    <details class="tree-folder" open>
+      <summary>⌄&nbsp; learning</summary>
+      <a class="tree-file{% if page.category_key == 'development' %} is-active{% endif %}" href="{{ '/development/' | relative_url }}"{% if page.category_key == 'development' %} aria-current="page"{% endif %}><span aria-hidden="true">▱</span> development.md</a>
+      <a class="tree-file{% if page.category_key == 'ctf' %} is-active{% endif %}" href="{{ '/ctf-wargame/' | relative_url }}"{% if page.category_key == 'ctf' %} aria-current="page"{% endif %}><span aria-hidden="true">▱</span> ctf-wargame.md</a>
+      <a class="tree-file{% if page.category_key == 'bug-bounty' %} is-active{% endif %}" href="{{ '/bug-bounty/' | relative_url }}"{% if page.category_key == 'bug-bounty' %} aria-current="page"{% endif %}><span aria-hidden="true">▱</span> bug-bounty.md</a>
+    </details>
+    <details class="tree-folder" open>
+      <summary>⌄&nbsp; archive</summary>
+      <a class="tree-file{% if page.category_key == 'blog-docs' %} is-active{% endif %}" href="{{ '/blog-docs/' | relative_url }}"{% if page.category_key == 'blog-docs' %} aria-current="page"{% endif %}><span aria-hidden="true">▱</span> blog-docs.md</a>
+      <a class="tree-file{% if page.category_key == 'analysis-conference' %} is-active{% endif %}" href="{{ '/analysis-conference/' | relative_url }}"{% if page.category_key == 'analysis-conference' %} aria-current="page"{% endif %}><span aria-hidden="true">▱</span> papers.md</a>
+      <a class="tree-file{% if page.category_key == 'contest-certificate' %} is-active{% endif %}" href="{{ '/contest-certificate/' | relative_url }}"{% if page.category_key == 'contest-certificate' %} aria-current="page"{% endif %}><span aria-hidden="true">▱</span> contest-certificate.md</a>
+    </details>
+  </nav>
+  <p class="explorer-foot">Study archive for offensive security.</p>
+</aside>

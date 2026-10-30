@@ -1,0 +1,39 @@
+@media (max-width: 1120px) {
+  .app-shell { grid-template-columns: var(--activity-width) var(--explorer-width) minmax(0, 1fr); }
+  .page-outline { display: none; }
+}
+
+@media (max-width: 780px) {
+  .app-shell { grid-template-columns: var(--activity-width) minmax(0, 1fr); }
+  .site-explorer { box-shadow: 12px 0 30px rgba(0, 0, 0, .35); height: 100svh; left: var(--activity-width); position: fixed; top: 0; transform: translateX(-105%); transition: transform .2s ease; width: min(var(--explorer-width), calc(100vw - var(--activity-width))); z-index: 10; }
+  body.explorer-is-open { overflow: hidden; }
+  body.explorer-is-open .site-explorer { transform: translateX(0); }
+  .explorer-close { display: inline-block; }
+  .explorer-scrim { background: rgba(0, 0, 0, .5); border: 0; display: block; inset: 0 0 0 var(--activity-width); opacity: 0; pointer-events: none; position: fixed; transition: opacity .2s ease; z-index: 9; }
+  body.explorer-is-open .explorer-scrim { opacity: 1; pointer-events: auto; }
+  .mobile-menu-toggle { background: transparent; border: 0; cursor: pointer; display: grid; gap: 4px; margin: 0 .85rem; padding: .4rem; }
+  .mobile-menu-toggle span { background: var(--lime); display: block; height: 1px; width: 18px; }
+  .editor-chrome { align-items: center; display: flex; min-height: 50px; }
+  .editor-tab { flex: 1; height: 50px; }
+  .editor-breadcrumb { display: none; }
+  .editor-content { padding: 2rem 1.15rem 2.7rem; }
+  .status-bar span:last-child { display: none; }
+  .archive-item a { gap: .4rem .7rem; grid-template-columns: 104px minmax(0, 1fr); }
+  .archive-tags { grid-column: 1; grid-row: 2; }
+  .archive-copy { grid-column: 2; grid-row: 1 / span 2; }
+  .archive-difficulty { display: none; }
+}
+
+@media (max-width: 480px) {
+  :root { --activity-width: 42px; }
+  .activity-button { font-size: 1.15rem; }
+  .editor-tab { font-size: .78rem; padding-inline: .8rem; }
+  h1 { font-size: 2rem; }
+  .archive-item a { grid-template-columns: 1fr; }
+  .archive-tags, .archive-copy { grid-column: auto; grid-row: auto; }
+  .archive-copy small { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

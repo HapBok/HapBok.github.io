@@ -6,7 +6,6 @@ categories: [blog-docs]
 tags: [jekyll, github-pages]
 description: "Markdown 기록을 위한 Jekyll 블로그의 기본 구조와 작성 흐름을 정리했다."
 file_name: github-pages-blog-structure.md
-directory_label: posts
 outline:
   - 목적
   - 폴더 구조

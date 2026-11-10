@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ko">
+<head>{% include head.html %}</head>
+<body class="layout--cover" data-baseurl="{{ site.baseurl }}">
+<a class="skip-link" href="#content">본문으로 건너뛰기</a>
+<header class="cover-header">
+<a class="wordmark" href="{{ '/' | relative_url }}" aria-label="HapBok 표지">HapBok<span class="wordmark-dot" aria-hidden="true">.</span></a>
+<nav aria-label="표지 메뉴"><a href="{{ '/home/' | relative_url }}">블로그 홈</a><a class="icon-button" href="https://github.com/HapBok" target="_blank" rel="noopener noreferrer" aria-label="GitHub 프로필 (새 탭)">{% include icon.html name="github" %}</a></nav>
+</header>
+<main id="content" class="cover-main" tabindex="-1">{{ content }}</main>
+<footer class="cover-footer"><span>LEARN · EXPERIMENT · EXPLAIN</span><span>Happy + Boksoon = HapBok</span><span>KNIGHTS FRONTIER 3기</span></footer>
+</body>
+</html>

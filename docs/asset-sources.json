@@ -78,6 +78,14 @@
       "sourceFile": "exec-78944b42-1a35-40ba-bf95-680875e4300c.png",
       "tool": "built-in image_gen",
       "prompt": "Production transparent PNG asset. Extract/recreate ONLY the FIRST upper-left neutral frame's Yorkshire Boksoon from reference sprite sheet, keeping EXACT same pixel-art tan/cream/silver face, huge upright ears, purple/cream B hoodie, seated paws down and facing viewer. ONE dog ONLY transparent alpha; NO atlas or other characters; no labels except B. Whole body centered inside square canvas, 8% margin each side. Static fallback for this exact animated character; preserve proportions, clothing and full natural fur color."
+    },
+    {
+      "name": "cover-h-emblem",
+      "reference": "codex-clipboard-2164a8e8-c802-4d21-bee6-edd1456cc9d7.png",
+      "sourceFile": "exec-d94c9754-567d-44f2-93aa-aaee1557cd24.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Production website hero illustration asset, NOT a screenshot or full website. Reference image is for the dimensional H composition/material quality only. Create ONE freestanding large architectural letter H, a tasteful contemporary developer personal-brand sculpture. Precise clean softly rounded solid forms, satin porcelain white and muted steel-blue #285C80 facets, restrained deep indigo detailing. Keep the H immediately readable. Less ribbon-like and less tangled than the reference; two substantial upright pillars with a simple connecting crossbar, subtle elegant twist/chamfer but not a flowing knot. Three-quarter view, soft realistic studio lighting, clean premium material without excessive shine or glow. GENUINELY TRANSPARENT alpha backdrop so it will blend into the blog's #F7F8FA background, minimal contact shadow only. Full object inside generous 7% margins, approximately square composition. No typography, slogans, arrows, circles, rings, orbits, buttons, people, animals, scenery or interface elements. The user will put separately animated pet mascots in front of the lower part, so leave the bottom front of the H uncluttered. Not a logo sheet, only one object.",
+      "cleanupPrompt": "BACKGROUND CLEANUP ONLY. Preserve the exact H sculpture shape, colors, scale, composition and canvas dimensions. Remove ALL disconnected white/gray matte residue, flecks and halo outside its physical contour and inside the H's empty openings. The supplied alpha has visibly ugly white fragments above the uprights and in the middle opening: eliminate them to alpha0. Preserve the actual white porcelain surfaces of the sculpture fully opaque. Clean antialiased perimeter, no torn edges or added shapes. Genuinely transparent RGBA background, minimal contact shadow directly below feet only. No redraw, no typography, no new scenery."
     }
   ],
   "refinements": [

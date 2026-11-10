@@ -45,6 +45,11 @@ test('pet interactions pause offscreen, prevent overlapping greetings, and respe
     assert.equal(timers.size, 0, 'offscreen must cancel animation and blink timers');
     observer([{ target: pet, isIntersecting: true }]);
     assert.equal(timers.size, 1, 'returning schedules a blink without repeating the entry greeting');
+    pet.dispatchEvent(new Event('pointerenter'));
+    assert.equal(pet.dataset.animating, 'true', 'hover must greet, not just track a pointer');
+    assert.equal(pet.dataset.frame, '4');
+    pet.dispatchEvent(new Event('pointerenter'));
+    assert.equal(timers.size, 1, 'hover must not queue duplicate greetings');
     documentMock.hidden = true;
     documentMock.dispatchEvent(new Event('visibilitychange'));
     assert.equal(timers.size, 0, 'hidden tab must cancel timers');

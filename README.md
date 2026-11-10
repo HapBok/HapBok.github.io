@@ -7,6 +7,16 @@
 - Pretendard Variable / 밝은 중성색 + 절제된 블루
 - 해피(H, 말티즈)와 복순이(B, 요크셔테리어)
 
+## 페이지 흐름
+
+표지 `/` → 블로그 홈 `/home/` → 전체 기록 `/notes/` 또는 카테고리 → 게시글.
+표지는 입장 화면만 보여 주며, 기존 홈과 소개는 `/home/`에 모았습니다.
+별도의 소개 메뉴는 없습니다. 이전 `/about/` 주소는 `/home/#about`으로 이동합니다.
+
+기록·게시글 화면의 상단 메뉴 버튼으로 데스크톱 사이드바를 접고 펼칠 수 있습니다.
+카테고리 이름은 하위 글 목록 토글이고, 옆의 **전체** 링크는 카테고리 초기 화면입니다.
+데스크톱 사이드바의 접힘 상태는 브라우저에 저장하며 모바일 서랍과는 별도로 관리합니다.
+
 ## 글을 쓰는 방법
 
 1. `_posts/` 아래 원하는 폴더에 `YYYY-MM-DD-slug.md`를 만듭니다.
@@ -74,7 +84,10 @@ Dockerfile·Gemfile·잠금 파일은 미리보기 의존성을 관리하며 프
 
 | 바꾸려는 것 | 수정 위치 | 역할 |
 | --- | --- | --- |
+| 표지 문구·입장 버튼 | `index.md`, `_layouts/cover.html` | 첫 접속 화면과 홈으로의 연결 |
+| 표지 H·크기·배치 | `assets/images/cover/`, `_sass/_cover.scss` | 표지 조형물과 반응형 구성 |
 | 홈 소개 | `_includes/home/intro.html` | 문구, 캐릭터 버튼과 소개 배치 |
+| 홈의 소개 영역 | `home.md` | 관심 분야와 두 아이의 이름 이야기 |
 | 홈 최신 글 | `_includes/home/latest-notes.html` | 실제 최근 글 최대 5개 표시 |
 | 색상·글꼴 | `_sass/_tokens.scss`, `_sass/_base.scss` | 전체 색상 변수·웹폰트·기본 글자 |
 | 상단 메뉴·사이드바 | `_includes/header.html`, `_includes/navigation.html` | 공통 탐색 마크업 |
@@ -83,6 +96,7 @@ Dockerfile·Gemfile·잠금 파일은 미리보기 의존성을 관리하며 프
 | 목록과 검색창 배치 | `_layouts/archive.html`, `_sass/_archive.scss` | 전체 기록·카테고리 공통 화면 |
 | 글 본문 화면 | `_layouts/post.html`, `_sass/_post.scss` | 제목·메타정보·목차·코드·하단 |
 | 모바일 배치 | `_sass/_responsive.scss` | 화면 너비별 메뉴·본문 크기 |
+| 넓은 화면·폴더·버튼 보완 | `_sass/_refinements.scss` | 전체 폭, 사이드바 토글, 반응 모션 |
 | 캐릭터 그림 | `assets/images/characters/` | 투명 PNG와 홈 프레임 atlas |
 | 캐릭터 크기·프레임 표시 | `_sass/_characters.scss` | 프레임을 한 장씩 표시 |
 | 실제 상호작용 | `assets/js/modules/` | 아래 모듈별 동작 |
@@ -90,10 +104,12 @@ Dockerfile·Gemfile·잠금 파일은 미리보기 의존성을 관리하며 프
 ## JavaScript의 역할
 
 - `navigation.js`: 모바일 메뉴, 닫기·Esc·포커스 순환.
+- 데스크톱 접기·펼치기와 카테고리별 하위 글 토글도 `navigation.js`에서 관리합니다.
 - `search.js`: 생성된 `search.json`에서 제목·설명·본문 검색. 전체 기록은 전체, 카테고리는 해당 분류만 검색.
 - `toc.js`: 실제 h2/h3에서 목차와 고유 앵커 생성, 스크롤 위치 표시.
 - `reading-tools.js`: 코드 복사, 표 가로 스크롤, 이미지 확대와 포커스 복귀.
 - `companions.js`: 홈 캐릭터 프레임·인사·시선·깜빡임·화면 밖 일시정지.
+- `motion.js`: 페이지별 캐릭터의 hover·클릭·키보드 반응, 표지 H의 가벼운 포인터 반응.
 - `main.js`: 각 모듈을 불러옵니다. 배포 버전을 모듈 URL에도 전달합니다.
 
 JavaScript가 없어도 본문과 정적 목록·홈의 분류 링크를 읽을 수 있습니다.
@@ -115,7 +131,10 @@ JavaScript가 없어도 본문과 정적 목록·홈의 분류 링크를 읽을 
 현재 인사는 프레임당 135ms, 깜빡임은 약 8초 간격입니다.
 `companions.js`에서 숫자를 수정할 수 있습니다.
 화면 밖·비활성 탭·동작 줄이기 설정에서는 자동 동작을 멈춥니다.
-홈 밖 캐릭터는 정적인 상황별 포즈이며 글 하단에만 한 번의 가벼운 등장 효과가 있습니다.
+표지와 홈의 두 아이는 마우스를 올리거나 키보드로 선택해도 인사합니다.
+그 밖의 캐릭터는 상황별 그림에 짧은 들썩임·기울임 반응을 더했습니다.
+캐릭터가 포함된 페이지마다 별도 애니메이션 파일을 만들 필요 없이 공통 include가 반응을 연결합니다.
+글 하단에는 처음 도착할 때 한 번의 가벼운 등장 효과도 있습니다.
 
 현재 사용 자산은 승인된 캐릭터 시트를 바탕으로 내장 이미지 생성 도구로 제작했습니다.
 생성 프롬프트·원본 식별자는 `docs/asset-sources.json`에 정리했습니다.
@@ -127,7 +146,7 @@ Pretendard v1.3.9와 OFL 라이선스는 `assets/fonts/pretendard/`에 있습니
 ~~~powershell
 docker run --rm -v "${PWD}:/site" hapbok-jekyll:local bundle exec jekyll build
 python scripts/check_site.py
-node --test scripts/companions.test.mjs scripts/reading-tools.test.mjs
+node --test scripts/companions.test.mjs scripts/reading-tools.test.mjs scripts/navigation.test.mjs scripts/motion.test.mjs
 ~~~
 
 추가 브라우저 검증용 글은 `python scripts/make_qa_fixture.py`로 `tmp/`에 별도 생성합니다.

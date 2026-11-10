@@ -90,6 +90,8 @@ export function initCompanions() {
       }).catch(() => { /* Keep the accessible H/B fallback. */ });
     });
     button.addEventListener('click', () => greet(true));
+    button.addEventListener('pointerenter', () => { if (finePointer.matches) greet(); });
+    button.addEventListener('focus', () => greet());
     button.addEventListener('pointermove', event => {
       if (!finePointer.matches || !allowed()) return;
       const rect = button.getBoundingClientRect();

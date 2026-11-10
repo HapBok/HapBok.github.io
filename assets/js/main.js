@@ -4,6 +4,7 @@ const features = [
   ['navigation', 'initNavigation'], ['search', 'initSearch'],
   ['toc', 'initToc'], ['reading-tools', 'initReadingTools'],
   ['companions', 'initCompanions'],
+  ['motion', 'initMotion'],
 ];
 await Promise.all(features.map(async ([file, initialise]) => {
   try {

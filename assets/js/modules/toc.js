@@ -8,7 +8,7 @@ export function initToc() {
   const details = toc.querySelector('details');
   const mobileSlot = document.querySelector('[data-mobile-toc]');
   const desktopSlot = toc.parentElement;
-  const compact = matchMedia('(max-width: 1023px)');
+  const compact = matchMedia('(max-width: 1399px)');
   const ids = new Set([...document.querySelectorAll('[id]')].filter(item => !headings.includes(item)).map(item => item.id));
   const links = [];
   headings.forEach((heading, index) => {

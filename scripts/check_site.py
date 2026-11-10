@@ -7,7 +7,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 root = Path(sys.argv[1] if len(sys.argv) > 1 else "_site").resolve()
-routes = ["/", "/notes/", "/about/", "/development/", "/ctf-wargame/",
+routes = ["/", "/home/", "/notes/", "/about/", "/development/", "/ctf-wargame/",
           "/bug-bounty/", "/blog-docs/", "/analysis-conference/",
           "/contest-certificate/", "/posts/github-pages-blog-structure/", "/404.html"]
 

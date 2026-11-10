@@ -98,6 +98,13 @@
       "prompt": "BACKGROUND REMOVAL ONLY. The supplied image is a fixed 5-column x 2-row Boksoon animation atlas. Preserve ALL ten dogs and their precise positions, canvas dimensions, scale, poses, clothing B patches and pixels. Remove the light gray/white backdrop and shadows COMPLETELY to genuine zero-alpha transparency. Background must have alpha0, not a pale translucent wash. Keep dog bodies opaque. Do not redraw or shift any dog, do not add margins or alter the grid, no checkerboard. Deliver transparent RGBA PNG with clean edges. This is a production sprite atlas for a website."
     }
   ],
+  "coverRefresh": {
+    "file": "assets/images/cover/h-emblem-illustrated.png",
+    "tool": "built-in image_gen",
+    "source": "exec-66e72259-56a5-4f12-8257-b0826e5e889a.png",
+    "references": ["assets/images/cover/h-emblem.png", "assets/images/characters/coding.png"],
+    "prompt": "Use case: style-transfer / stylized-concept.\nInput image 1 is the EXISTING H website emblem to redesign; image 2 is STYLE REFERENCE ONLY (the dogs).\nCreate a replacement standalone uppercase H emblem for the HapBok blog cover, matching the warm, carefully hand-painted illustrated shading and fine outline style of the two dog mascots. Keep the immediately recognizable upright block H silhouette and three-quarter perspective, centered full object with ample clean transparent margin. Replace cold shiny metal/white porcelain with a soft matte, finely grained clothbound storybook/field-notebook material. Main faces warm pale ivory, left/inner edges muted deep teal like Happy's H harness, right side subtle muted plum like Boksoon's B hoodie, small restrained cream seam/stitched detail only at edges. Sophisticated friendly developer notebook brand object, not toyish candy, not futuristic chrome. Clear thick H, no extra letters, no dogs rendered in this image, no eyes/faces, no ears on the H, no ribbons, no buildings, no foliage, no arrows, no rings, no scenery, no UI. Hand-illustrated softly modeled volume with delicate dark outline, warm shadow and tactile surface that fits the illustrated mascots when placed next to them. Strong simple silhouette, not extra embellishments. True RGBA fully transparent background including both H negative-space openings, no white matte fragments or halo, only very subtle compact contact shadow under feet. Square canvas. It will be used behind separate existing animated dog sprites; leave their foreground empty, do not add dogs. No text other than the H shape."
+  },
   "font": {
     "name": "Pretendard Variable",
     "version": "1.3.9",

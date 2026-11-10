@@ -34,7 +34,12 @@ body.sidebar-is-collapsed .site-sidebar { width:0; padding-inline:0; border:0; v
 .archive-tools .search-field { width:min(100%,520px); }
 .archive-copy p { max-width:85ch; }
 .archive-copy h3 { font-size:24px; }
-.reading-layout { grid-template-columns:minmax(0,820px) 190px; gap:clamp(28px,3vw,60px); justify-content:start; }
+.reading-layout { width:100%; margin-inline:auto; grid-template-columns:minmax(0,820px); gap:clamp(28px,3vw,60px); justify-content:center; }
+/* Centre the reading group in the space beside the navigation, including on ultrawide displays.
+   An absent or compact table of contents must not reserve an empty column. */
+@media (min-width:1400px) {
+.reading-layout:has(> .page-toc:not([hidden])) { grid-template-columns:minmax(0,820px) 190px; }
+}
 .post-description { max-width:70ch; }
 .site-footer { max-width:none; margin-inline:var(--page-gutter); }
 .site-footer > nav { display:flex; gap:24px; margin-left:auto; }

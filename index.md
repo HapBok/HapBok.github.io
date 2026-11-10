@@ -12,7 +12,7 @@ description: 질문을 남기고, 이해를 연결합니다. HapBok의 보안·�
 <div class="cover-actions"><a class="action-button" href="{{ '/home/' | relative_url }}">블로그 들어가기</a><a class="cover-story" href="{{ '/home/#about' | relative_url }}">HapBok 이야기</a></div>
 </div>
 <div class="cover-visual" data-cover-visual>
-<img class="cover-emblem" src="{{ '/assets/images/cover/h-emblem.png' | relative_url }}" width="1254" height="1254" alt="" aria-hidden="true" fetchpriority="high">
+<img class="cover-emblem" src="{{ '/assets/images/cover/h-emblem-illustrated.png' | relative_url }}" width="1254" height="1254" alt="" aria-hidden="true" fetchpriority="high">
 <div class="cover-companions">{% include companions.html %}</div>
 </div>
 </section>

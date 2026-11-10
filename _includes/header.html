@@ -1,33 +1,12 @@
-{% assign active_category = page.category_key | default: page.categories.first %}
-{% assign breadcrumb_directory = page.directory_label %}
-{% if breadcrumb_directory == nil or breadcrumb_directory == '' %}
-  {% case active_category %}
-    {% when 'development' %}{% assign breadcrumb_directory = 'learning / development' %}
-    {% when 'ctf' %}{% assign breadcrumb_directory = 'learning / ctf-wargame' %}
-    {% when 'bug-bounty' %}{% assign breadcrumb_directory = 'learning / bug-bounty' %}
-    {% when 'blog-docs' %}{% assign breadcrumb_directory = 'archive / blog-docs' %}
-    {% when 'analysis-conference' %}{% assign breadcrumb_directory = 'archive / papers' %}
-    {% when 'contest-certificate' %}{% assign breadcrumb_directory = 'archive / contest-certificate' %}
-  {% endcase %}
-{% endif %}
-
-<header class="editor-chrome">
-  <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-explorer" aria-label="탐색기 열기">
-    <span></span><span></span><span></span>
-  </button>
-
-  <div class="editor-tab" aria-current="page">
-    <span class="file-icon" aria-hidden="true">▱</span>
-    <span>{{ page.file_name | default: 'welcome.md' }}</span>
-  </div>
-
-  <div class="editor-breadcrumb" aria-label="현재 문서 경로">
-    <span>HAPBOK-LOG</span>
-    {% if breadcrumb_directory %}
-      <span aria-hidden="true">›</span>
-      <span>{{ breadcrumb_directory }}</span>
-    {% endif %}
-    <span aria-hidden="true">›</span>
-    <strong>{{ page.file_name | default: 'welcome.md' }}</strong>
-  </div>
-</header>
+<header class="site-header"><div class="header-inner">
+<a class="wordmark" href="{{ '/' | relative_url }}" aria-label="HapBok 홈">HapBok<span class="wordmark-dot" aria-hidden="true">.</span></a>
+<nav class="header-nav" aria-label="주요 메뉴">
+<a href="{{ '/notes/' | relative_url }}"{% if page.layout == 'archive' or page.layout == 'category' or page.layout == 'post' %} aria-current="page"{% endif %}>기록</a>
+<a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>소개</a>
+</nav>
+<div class="header-actions">
+<a class="icon-button" href="{{ '/notes/#search' | relative_url }}" aria-label="기록 검색">{% include icon.html name="search" %}</a>
+<a class="icon-button" href="https://github.com/HapBok" target="_blank" rel="noopener noreferrer" aria-label="GitHub 프로필 (새 탭)">{% include icon.html name="github" %}</a>
+<button class="icon-button menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="메뉴 열기" hidden>{% include icon.html name="menu" %}</button>
+</div>
+</div></header>

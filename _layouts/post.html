@@ -1,31 +1,19 @@
 ---
 layout: default
 ---
-
 {% assign primary_category = page.categories | first %}
-{% case primary_category %}
-  {% when 'development' %}{% assign category_url = '/development/' %}{% assign category_name = '개발' %}
-  {% when 'ctf' %}{% assign category_url = '/ctf-wargame/' %}{% assign category_name = 'CTF / Wargame' %}
-  {% when 'bug-bounty' %}{% assign category_url = '/bug-bounty/' %}{% assign category_name = 'Bug Bounty' %}
-  {% when 'blog-docs' %}{% assign category_url = '/blog-docs/' %}{% assign category_name = '블로그 / 기술문서' %}
-  {% when 'analysis-conference' %}{% assign category_url = '/analysis-conference/' %}{% assign category_name = '논문 / 컨퍼런스' %}
-  {% when 'contest-certificate' %}{% assign category_url = '/contest-certificate/' %}{% assign category_name = '공모전 / 자격증' %}
-  {% else %}{% assign category_url = '/' %}{% assign category_name = '홈' %}
-{% endcase %}
-
-<article class="post-page" data-category="{{ primary_category }}">
-  <a class="back-link" href="{{ category_url | relative_url }}">← {{ category_name }}으로</a>
-  <header class="post-header">
-    <p class="document-kicker">{{ primary_category | default: 'note' }}</p>
-    <h1>{{ page.title }}</h1>
-    {% if page.description %}<p class="post-description">{{ page.description }}</p>{% endif %}
-    <div class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
-      {% for tag in page.tags %}<span>{{ tag }}</span>{% endfor %}
-    </div>
-  </header>
-
-  <div class="post-body">
-    {{ content }}
-  </div>
+{% assign category = site.data.categories | where: 'key', primary_category | first %}
+<div class="reading-layout"><article class="post-page">
+<a class="back-link" href="{{ category.url | default: '/notes/' | relative_url }}">{% include icon.html name="back" %} {{ category.title | default: '모든 기록' }} 목록</a>
+<header class="post-header"><p class="eyebrow">{{ category.title | default: '기록' }}</p><h1>{{ page.title | escape }}</h1>
+{% if page.description %}<p class="post-description">{{ page.description | escape }}</p>{% endif %}
+<div class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time>{% for tag in page.tags %}<span>{{ tag | escape }}</span>{% endfor %}</div></header>
+<div data-mobile-toc></div><div class="post-body" data-post-body>{{ content }}</div>
+{% if page.previous or page.next %}<nav class="post-pagination" aria-label="이전·다음 기록">
+{% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><small>이전 기록</small>{{ page.previous.title | escape }}</a>{% endif %}
+{% if page.next %}<a href="{{ page.next.url | relative_url }}"><small>다음 기록</small>{{ page.next.title | escape }}</a>{% endif %}
+</nav>{% endif %}
+<div class="post-end" data-reveal-once>{% include character.html name="resting" class="footer-character" %}<p>읽어 주셔서 감사합니다.</p><a href="{{ '/notes/' | relative_url }}">모든 기록 보기</a></div>
 </article>
+<aside class="page-toc" data-toc hidden aria-label="본문 목차"><details open data-toc-details><summary>이 글에서</summary><nav aria-label="이 글의 목차"><ol data-toc-list></ol></nav></details></aside>
+</div>

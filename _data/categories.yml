@@ -1,18 +1,24 @@
 - key: development
   title: 개발
   url: /development/
+  character: coding
 - key: ctf
   title: CTF · Wargame
   url: /ctf-wargame/
+  character: terminal
 - key: bug-bounty
-  title: BugBounty
+  title: Bug Bounty
   url: /bug-bounty/
+  character: research
 - key: blog-docs
   title: 블로그 · 기술문서
   url: /blog-docs/
+  character: reading
 - key: analysis-conference
   title: 논문 · 컨퍼런스
   url: /analysis-conference/
+  character: reading
 - key: contest-certificate
   title: 공모전 · 자격증
   url: /contest-certificate/
+  character: celebrating

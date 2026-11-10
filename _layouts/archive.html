@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<section class="archive-page" data-archive data-category="{{ page.category_key | default: '' }}">
+<header class="archive-header"><div><p class="eyebrow">기록</p><h1>{{ page.title }}</h1><p class="page-description">{{ page.description }}</p></div>
+{% if page.category_key %}{% assign current_category = site.data.categories | where: 'key', page.category_key | first %}{% include character.html name=current_category.character class="category-character" %}{% endif %}
+</header>
+{% if page.notice %}<p class="category-notice">{{ page.notice }}</p>{% endif %}
+<div class="archive-tools">
+<label class="search-field"><span class="sr-only">{% if page.category_key %}이 주제에서 {% endif %}제목과 내용 검색</span>{% include icon.html name="search" %}<input id="search" type="search" data-search-input placeholder="제목과 내용에서 검색" autocomplete="off" spellcheck="false" aria-describedby="search-status" disabled></label>
+<span class="sort-label">최신순</span></div>
+<p class="search-status" id="search-status" role="status" aria-live="polite" hidden></p>
+<noscript><p class="empty-message">검색은 JavaScript가 필요합니다. 아래에서 기록을 직접 읽을 수 있습니다.</p></noscript>
+<div data-records>
+{% if page.category_key %}{% assign listed_posts = site.categories[page.category_key] %}{% else %}{% assign listed_posts = site.posts %}{% endif %}
+{% if listed_posts %}{% assign listed_posts = listed_posts | sort: 'date' | reverse %}{% endif %}
+{% include post-list.html posts=listed_posts %}
+{% if listed_posts.size > 0 %}{% else %}<p class="empty-message">{{ page.empty_message | default: '기록을 준비하고 있습니다.' }}</p>{% endif %}
+</div>
+<div class="search-empty" data-search-empty hidden>{% include character.html name="empty" class="empty-character" %}<p>일치하는 기록이 없습니다.</p><small>다른 단어로 검색해 보세요.</small></div>
+{{ content }}
+</section>

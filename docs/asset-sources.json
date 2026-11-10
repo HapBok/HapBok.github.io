@@ -1,0 +1,99 @@
+{
+  "created": "2026-11-10",
+  "purpose": "Approved HapBok pet illustrations and animation atlases",
+  "assets": [
+    {
+      "name": "happy-sprite",
+      "reference": "exec-443946fe-60e5-4dc8-96b7-dccd4272a9e9.png",
+      "sourceFile": "exec-8b96e981-ee98-4080-93fd-350d271d0dcd.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Production website PNG asset on genuinely TRANSPARENT alpha background, NO labels, NO cell numbers, NO checkerboard drawn into image, no border, no website UI. Match supplied reference's detailed warm crisp pixel-art style and EXACT recognizable dog identities: Happy white Maltese DROP ears round short muzzle, H patch; Boksoon silver/cream Yorkshire huge UPRIGHT ears and tan shaggy muzzle, B patch. Full color, canine paws, no extra limbs. Keep all subjects fully inside with clean transparent margin. Clothing and accessories consistent with specified reference scene. No additional dog. ONE Happy dog ONLY. Make a precisely aligned SPRITE ATLAS: EXACTLY 5 columns by 2 rows of equal cells, edge-to-edge rectangular image 2560x1024, ten frames total, transparent no dividers. Every cell same canvas512x512, dog sits on identical bottom baseline y470, same size, head/body stay aligned. Happy from scene01, teal H harness and black round goggles above eyes. Row-major sequence: cell0 neutral paws down facing viewer; cell1 same body eyes/head looking slightly left; cell2 eyes/head slightly right; cell3 same pose eyes closed blink; cell4 begin raising right front paw; cell5 paw midway; cell6 paw lifted showing pads; cell7 paw waves outward; cell8 paw returning midway; cell9 neutral paws down again. Keep facial structure, outfit H patch, body size, pixel shading identical across cells. This MUST be usable for background-position frame animation with no shifting between frames. No Boksoon."
+    },
+    {
+      "name": "boksoon-sprite",
+      "reference": "exec-443946fe-60e5-4dc8-96b7-dccd4272a9e9.png",
+      "sourceFile": "exec-6a23999a-126c-4f80-8f01-6a07d3e51f18.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Production website PNG asset on genuinely TRANSPARENT alpha background, NO labels, NO cell numbers, NO checkerboard drawn into image, no border, no website UI. Match supplied reference's detailed warm crisp pixel-art style and EXACT recognizable dog identities: Happy white Maltese DROP ears round short muzzle, H patch; Boksoon silver/cream Yorkshire huge UPRIGHT ears and tan shaggy muzzle, B patch. Full color, canine paws, no extra limbs. Keep all subjects fully inside with clean transparent margin. Clothing and accessories consistent with specified reference scene. No additional dog. ONE Boksoon dog ONLY. Make a precisely aligned SPRITE ATLAS: EXACTLY 5 columns by 2 rows of equal cells, edge-to-edge rectangular image2560x1024, ten frames total, transparent no dividers. Every cell same canvas512x512, seated paws on identical bottom baseline y470, same scale, head/body aligned. Boksoon from scene01, purple/cream B hoodie, huge upright ears, cream/silver tuft and tan muzzle. Row-major: cell0 neutral sitting facing viewer; cell1 same body head/eyes slightly left; cell2 head/eyes slightly right; cell3 closed-eyes blink; cell4 head begins inquisitive tilt; cell5 head tilts more right, one ear softly angles; cell6 head tilts opposite with ears perked; cell7 head returns centered with happy expression; cell8 one ear flick and slight head nod; cell9 neutral identical to cell0. No entire-body shifts, no jumping. Keep B patch, proportions, scale and baseline identical across cells. No Happy."
+    },
+    {
+      "name": "coding",
+      "reference": "exec-443946fe-60e5-4dc8-96b7-dccd4272a9e9.png",
+      "sourceFile": "exec-a7af2594-af6e-4514-b6ed-dbcbe0ae7b70.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Production website PNG asset on genuinely TRANSPARENT alpha background, NO labels, NO cell numbers, NO checkerboard drawn into image, no border, no website UI. Match supplied reference's detailed warm crisp pixel-art style and EXACT recognizable dog identities: Happy white Maltese DROP ears round short muzzle, H patch; Boksoon silver/cream Yorkshire huge UPRIGHT ears and tan shaggy muzzle, B patch. Full color, canine paws, no extra limbs. Keep all subjects fully inside with clean transparent margin. Clothing and accessories consistent with specified reference scene. No additional dog. ONE isolated vignette matching scene02 ONLY, both dogs using one compact laptop, Happy navy H vest, Boksoon cream B cardigan leaning interested toward screen. No table or scenery. Wide composition transparent, original scene identity. Asset around800x480."
+    },
+    {
+      "name": "reading",
+      "reference": "exec-443946fe-60e5-4dc8-96b7-dccd4272a9e9.png",
+      "sourceFile": "exec-eb926e37-1ede-41a8-a081-886497bddcd9.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Production website PNG asset on genuinely TRANSPARENT alpha background, NO labels, NO cell numbers, NO checkerboard drawn into image, no border, no website UI. Match supplied reference's detailed warm crisp pixel-art style and EXACT recognizable dog identities: Happy white Maltese DROP ears round short muzzle, H patch; Boksoon silver/cream Yorkshire huge UPRIGHT ears and tan shaggy muzzle, B patch. Full color, canine paws, no extra limbs. Keep all subjects fully inside with clean transparent margin. Clothing and accessories consistent with specified reference scene. No additional dog. ONE isolated vignette matching scene03 ONLY, Happy lying reading open notebook with oatmeal H sweater, Boksoon sitting with pencil in mouth and olive B bandana. No scenery. Wide composition transparent, compact about800x480."
+    },
+    {
+      "name": "research",
+      "reference": "exec-443946fe-60e5-4dc8-96b7-dccd4272a9e9.png",
+      "sourceFile": "exec-93f6c23e-2f5e-44c0-8b8b-aa86bfd843e3.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Production website PNG asset on genuinely TRANSPARENT alpha background, NO labels, NO cell numbers, NO checkerboard drawn into image, no border, no website UI. Match supplied reference's detailed warm crisp pixel-art style and EXACT recognizable dog identities: Happy white Maltese DROP ears round short muzzle, H patch; Boksoon silver/cream Yorkshire huge UPRIGHT ears and tan shaggy muzzle, B patch. Full color, canine paws, no extra limbs. Keep all subjects fully inside with clean transparent margin. Clothing and accessories consistent with specified reference scene. No additional dog. ONE isolated vignette matching scene04 ONLY, Happy teal H scarf nose close to a magnifying glass on floor, Boksoon purple B utility vest sniffing behind a yellow file folder. No scenery. Transparent wide800x480."
+    },
+    {
+      "name": "resting",
+      "reference": "exec-443946fe-60e5-4dc8-96b7-dccd4272a9e9.png",
+      "sourceFile": "exec-b3b29f1b-56c8-4d27-9713-7528c7a15d5f.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Production website PNG asset on genuinely TRANSPARENT alpha background, NO labels, NO cell numbers, NO checkerboard drawn into image, no border, no website UI. Match supplied reference's detailed warm crisp pixel-art style and EXACT recognizable dog identities: Happy white Maltese DROP ears round short muzzle, H patch; Boksoon silver/cream Yorkshire huge UPRIGHT ears and tan shaggy muzzle, B patch. Full color, canine paws, no extra limbs. Keep all subjects fully inside with clean transparent margin. Clothing and accessories consistent with specified reference scene. No additional dog. ONE isolated vignette matching scene05 ONLY, both dogs curled asleep side by side, Happy teal H quilted vest and Boksoon mustard B knit sweater, one small closed green book in front. Warm living cozy pets, not memorial. No scenery. Transparent wide800x480."
+    },
+    {
+      "name": "terminal",
+      "reference": "exec-443946fe-60e5-4dc8-96b7-dccd4272a9e9.png",
+      "sourceFile": "exec-067f2e68-6c1b-4934-b5ce-050c765f4d87.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Production website PNG asset on genuinely TRANSPARENT alpha background, NO labels, NO cell numbers, NO checkerboard drawn into image, no border, no website UI. Match supplied reference's detailed warm crisp pixel-art style and EXACT recognizable dog identities: Happy white Maltese DROP ears round short muzzle, H patch; Boksoon silver/cream Yorkshire huge UPRIGHT ears and tan shaggy muzzle, B patch. Full color, canine paws, no extra limbs. Keep all subjects fully inside with clean transparent margin. Clothing and accessories consistent with specified reference scene. No additional dog. ONE isolated vignette matching scene06 ONLY, dogs on either side of small terminal monitor showing >_, Happy blue H overalls and Boksoon cream B apron over olive shirt, forepaws on edge of monitor. No room or scenery. Transparent wide800x480."
+    },
+    {
+      "name": "celebrating",
+      "reference": "exec-87e879c8-cee2-47ea-a74b-6325265eb805.png",
+      "sourceFile": "exec-4b39b8fe-8a33-4c87-acf8-2e6e063fc738.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Production website PNG asset on genuinely TRANSPARENT alpha background, NO labels, NO cell numbers, NO checkerboard drawn into image, no border, no website UI. Match supplied reference's detailed warm crisp pixel-art style and EXACT recognizable dog identities: Happy white Maltese DROP ears round short muzzle, H patch; Boksoon silver/cream Yorkshire huge UPRIGHT ears and tan shaggy muzzle, B patch. Full color, canine paws, no extra limbs. Keep all subjects fully inside with clean transparent margin. Clothing and accessories consistent with specified reference scene. No additional dog. ONE isolated vignette matching scene05 ONLY, Happy teal H harness making a little happy hop, Boksoon burgundy B hoodie play-bowing beside, 4 small confetti bits. No scenery. Transparent wide800x480."
+    },
+    {
+      "name": "empty",
+      "reference": "exec-87e879c8-cee2-47ea-a74b-6325265eb805.png",
+      "sourceFile": "exec-ad0dd5ff-97ba-47a0-b647-6b61e56d1759.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: stylized-concept. Production website PNG asset on genuinely TRANSPARENT alpha background, NO labels, NO cell numbers, NO checkerboard drawn into image, no border, no website UI. Match supplied reference's detailed warm crisp pixel-art style and EXACT recognizable dog identities: Happy white Maltese DROP ears round short muzzle, H patch; Boksoon silver/cream Yorkshire huge UPRIGHT ears and tan shaggy muzzle, B patch. Full color, canine paws, no extra limbs. Keep all subjects fully inside with clean transparent margin. Clothing and accessories consistent with specified reference scene. No additional dog. ONE isolated vignette matching scene04 ONLY, Happy mustard H coat tilts head, Boksoon olive B vest peers into an open empty yellow file folder. Curious friendly, not sad. No scenery. Transparent wide800x480."
+    },
+    {
+      "name": "happy-neutral",
+      "reference": "exec-8b96e981-ee98-4080-93fd-350d271d0dcd.png",
+      "sourceFile": "exec-313a54aa-9bcc-429f-9e81-4c3af510e291.png",
+      "tool": "built-in image_gen",
+      "prompt": "Production transparent PNG asset. Extract/recreate ONLY the FIRST upper-left neutral frame's white Maltese Happy from reference sprite sheet, keeping the EXACT same pixel-art face, drop ears, black round goggles above eyes, teal harness with H patch, seated paws down and facing viewer. ONE dog ONLY on transparent alpha; NO atlas, NO text labels other than H; no scenery. Whole body centered inside square canvas, 8% margin each side. This is the static fallback for this exact animated character; preserve identity, proportions, clothing, expression and full natural color."
+    },
+    {
+      "name": "boksoon-neutral",
+      "reference": "exec-28ead3cb-f6fa-4118-888e-89d2779eb650.png",
+      "sourceFile": "exec-78944b42-1a35-40ba-bf95-680875e4300c.png",
+      "tool": "built-in image_gen",
+      "prompt": "Production transparent PNG asset. Extract/recreate ONLY the FIRST upper-left neutral frame's Yorkshire Boksoon from reference sprite sheet, keeping EXACT same pixel-art tan/cream/silver face, huge upright ears, purple/cream B hoodie, seated paws down and facing viewer. ONE dog ONLY transparent alpha; NO atlas or other characters; no labels except B. Whole body centered inside square canvas, 8% margin each side. Static fallback for this exact animated character; preserve proportions, clothing and full natural fur color."
+    }
+  ],
+  "refinements": [
+    {
+      "name": "boksoon-sprite",
+      "prompt": "Edit the supplied Boksoon sprite atlas for PRODUCTION animation. Keep exactly 5 columns x 2 rows and the same 10 poses in the same order, transparent alpha, no text labels, purple/cream B hoodie and exact character identity. CRITICAL alignment correction: each cell is an equal square, make every dog about 80% of cell height with generous transparent margin above ears and below paws. Fix all paws to the exact SAME baseline at 90% of cell height in EVERY cell; head tilts must NOT translate body or feet. Keep hoodie/body/feet pixel-consistent and only eyes/head/ears move. The existing second-row dogs sit too low and have inconsistent baselines; correct that. First row: neutral, eyes look left, eyes look right, eyes shut blink, begin tilt. Second row: tilt right, tilt left, face center cheerful, gentle ear flick, neutral identical to first cell. Full natural color; no shadows bleeding to adjacent cells, no cropped ears/paws. Output an exact uniformly spaced 5x2 usable sprite atlas, no decorations."
+    },
+    {
+      "name": "boksoon-sprite",
+      "prompt": "BACKGROUND REMOVAL ONLY. The supplied image is a fixed 5-column x 2-row Boksoon animation atlas. Preserve ALL ten dogs and their precise positions, canvas dimensions, scale, poses, clothing B patches and pixels. Remove the light gray/white backdrop and shadows COMPLETELY to genuine zero-alpha transparency. Background must have alpha0, not a pale translucent wash. Keep dog bodies opaque. Do not redraw or shift any dog, do not add margins or alter the grid, no checkerboard. Deliver transparent RGBA PNG with clean edges. This is a production sprite atlas for a website."
+    }
+  ],
+  "font": {
+    "name": "Pretendard Variable",
+    "version": "1.3.9",
+    "source": "https://github.com/orioncactus/pretendard",
+    "license": "SIL Open Font License 1.1"
+  }
+}

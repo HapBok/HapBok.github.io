@@ -1,6 +1,6 @@
 ---
 layout: category
-title: 공모전 / 자격증
+title: 공모전 · 자격증
 permalink: /contest-certificate/
 category_key: contest-certificate
 category_number: "06"

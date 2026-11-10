@@ -1,0 +1,17 @@
+<ol class="archive-list">
+{% for post in include.posts %}
+{% assign primary_category = post.categories | first %}
+{% assign post_category = site.data.categories | where: 'key', primary_category | first %}
+<li class="archive-item" data-post-url="{{ post.url | relative_url }}">
+<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time>
+<div class="archive-copy"><h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+{% if post.description %}<p>{{ post.description | escape }}</p>{% endif %}
+<div class="record-meta">
+{% if post_category %}<a href="{{ post_category.url | relative_url }}">{{ post_category.title }}</a>{% endif %}
+{% if post.tags.size > 0 %}<span class="record-tags">{{ post.tags | join: ' · ' | escape }}</span>{% endif %}
+{% if post.platform %}<span>{{ post.platform | escape }}</span>{% endif %}
+{% if post.field %}<span>{{ post.field | escape }}</span>{% endif %}
+{% if post.difficulty %}<span>{{ post.difficulty | escape }}</span>{% endif %}
+</div></div></li>
+{% endfor %}
+</ol>

@@ -1,0 +1,14 @@
+.character { object-fit:contain; }
+.home-companions { text-align:center; position:relative; }
+.pet-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:end; gap:0; }
+.pet-button { border:0; background:transparent; padding:0; position:relative; width:100%; border-radius:8px; }
+.pet-button:active { background:#eaf0f4; }
+.pet-sprite { display:block; width:100%; aspect-ratio:1; background-size:500% 200%; background-position:var(--frame-x,0%) var(--frame-y,0%); background-repeat:no-repeat; }
+.pet-sprite--happy { background-image:url("../images/characters/happy-sprite.png"); }
+.pet-sprite--boksoon { background-image:url("../images/characters/boksoon-sprite.png"); }
+.pet-name { display:block; font:500 12px/1.6 var(--mono); margin-top:2px; color:var(--muted); }
+.pet-name small { font:400 12px/1.6 var(--sans); margin-left:6px; }
+.companion-hint { position:absolute; bottom:-36px; left:0; right:0; font-size:12px; color:var(--muted); margin:0; }
+.pet-button[data-image-error] .pet-sprite { background-image:none; display:grid; place-items:center; }
+.pet-button[data-image-error] .pet-sprite::after { content:"H"; font-size:48px; font-weight:700; color:var(--link); }
+.pet-button[data-pet="boksoon"][data-image-error] .pet-sprite::after { content:"B"; }

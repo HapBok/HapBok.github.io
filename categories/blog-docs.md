@@ -1,6 +1,6 @@
 ---
 layout: category
-title: 블로그 / 기술문서
+title: 블로그 · 기술문서
 permalink: /blog-docs/
 category_key: blog-docs
 category_number: "04"

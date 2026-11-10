@@ -1,6 +1,6 @@
 ---
 layout: category
-title: CTF / Wargame
+title: CTF · Wargame
 permalink: /ctf-wargame/
 category_key: ctf
 category_number: "02"

@@ -1,9 +1,13 @@
-.welcome-document { max-width: 800px; }
-.document-kicker { color: var(--amber); font-size: .76rem; letter-spacing: .08em; margin-bottom: .8rem; text-transform: uppercase; }
-.welcome-lead { border-bottom: 1px solid var(--border); color: var(--text); font-size: clamp(1.05rem, 1.8vw, 1.25rem); padding-bottom: 1.4rem; }
-.welcome-copy { color: var(--text); font-size: 1rem; line-height: 1.9; margin: 1.55rem 0 0; max-width: 660px; }
-.focus-box { border: 1px solid var(--lime); display: inline-block; margin-top: .25rem; max-width: 520px; padding: .7rem .95rem; }
-.focus-label { color: var(--amber); display: block; font-size: .68rem; letter-spacing: .1em; margin-bottom: .15rem; }
-.focus-box strong { color: var(--lime); display: block; font-family: var(--mono); font-size: 1.05rem; font-weight: 500; }
-.focus-box p { color: var(--muted); font-size: .84rem; margin: .35rem 0 0; }
-.latest-notes { border-top: 1px solid var(--border); margin-top: 2.7rem; max-width: 850px; padding-top: 1.45rem; }
+.home-intro { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:44px; align-items:center; padding:12px 0 62px; }
+.home-copy h1 { font-size:48px; margin-bottom:20px; letter-spacing:-.05em; }
+.home-lead { font-size:30px; line-height:1.45; font-weight:650; letter-spacing:-.035em; margin-bottom:24px; }
+.home-description { max-width:500px; font-size:17px; color:var(--muted); }
+.focus-label { display:block; border-left:2px solid #9ab5c9; padding-left:12px; margin:26px 0; color:var(--muted); font:14px/1.6 var(--mono); }
+.home-link { font-size:17px; }
+.home-latest { border-top:1px solid var(--line); padding-top:32px; }
+.section-heading { display:flex; justify-content:space-between; align-items:baseline; gap:20px; margin-bottom:10px; }
+.section-heading h2 { margin:0; }
+.section-heading > a { font-size:15px; }
+.home-topics { border-top:1px solid var(--line); margin-top:28px; padding-top:32px; }
+.home-topic-links { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px 48px; margin-top:28px; }
+.home-topic-links a { font-size:17px; justify-self:start; }

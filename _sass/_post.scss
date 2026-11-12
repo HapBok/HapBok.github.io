@@ -7,8 +7,9 @@
 .post-description { color:var(--muted); font-size:20px; line-height:1.7; margin-bottom:20px; }
 .post-meta { display:flex; gap:12px 18px; flex-wrap:wrap; color:var(--muted); font-size:13px; line-height:1.6; }
 .post-meta span { padding-left:16px; border-left:1px solid #bdc7d1; }
-.post-body h2 { margin-top:52px; margin-bottom:20px; scroll-margin-top:108px; }
-.post-body h3 { margin-top:34px; margin-bottom:16px; scroll-margin-top:108px; }
+/* The document's scroll-padding already accounts for the sticky header. */
+.post-body h2 { margin-top:52px; margin-bottom:20px; scroll-margin-top:0; }
+.post-body h3 { margin-top:34px; margin-bottom:16px; scroll-margin-top:0; }
 .post-body > h2:first-child { margin-top:0; }
 .post-body p { margin-bottom:24px; }
 .post-body li { margin:8px 0; }

@@ -39,7 +39,7 @@ body.sidebar-is-collapsed .site-sidebar { width:0; padding-inline:0; border:0; v
 .archive-copy p { max-width:85ch; }
 .archive-copy h3 { font-size:24px; }
 .reading-layout { display:block; width:100%; max-width:none; margin-inline:auto; }
-.post-page { width:100%; max-width:clamp(820px,60vw,1600px); margin-inline:auto; }
+.post-page { width:100%; max-width:clamp(820px,72vw,1600px); margin-inline:auto; }
 .post-body { font-size:clamp(18px,calc(14px + .25vw),22px); }
 .post-body table { min-width:640px; }
 .post-body th:first-child,.post-body td:first-child { min-width:10ch; overflow-wrap:normal; }

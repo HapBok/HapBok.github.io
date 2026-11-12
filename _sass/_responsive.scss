@@ -1,10 +1,10 @@
-@media (max-width:1279px) {
+@media not all and (min-width:1280px) {
 .header-inner,.page-frame { padding-left:28px; padding-right:28px; }
 .site-footer { margin-left:28px; margin-right:28px; }
 .page-frame--archive { gap:36px; }
 .reading-layout { gap:36px; grid-template-columns:minmax(0,740px) 170px; }
 }
-@media (max-width:1023px) {
+@media not all and (min-width:1024px) {
 :root { --header-height:68px; }
 .header-inner { gap:36px; }
 .page-frame--archive { display:block; }
@@ -25,7 +25,7 @@ body.menu-is-open { overflow:hidden; }
 .home-lead { font-size:27px; }
 .home-description { font-size:16px; }
 }
-@media (max-width:767px) {
+@media not all and (min-width:768px) {
 body { font-size:17px; }
 .header-inner,.page-frame { padding-left:22px; padding-right:22px; }
 .header-inner { gap:24px; }
@@ -62,7 +62,7 @@ pre { padding:18px; font-size:13px; }
 .about-companions { grid-template-columns:1fr; }
 .about-companions .character { max-width:300px; margin:auto; }
 }
-@media (max-width:479px) {
+@media not all and (min-width:480px) {
 .header-inner,.page-frame { padding-left:18px; padding-right:18px; }
 .header-inner { gap:18px; }
 .header-nav { gap:16px; }

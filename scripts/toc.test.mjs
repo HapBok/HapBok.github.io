@@ -48,7 +48,7 @@ test('outline survives responsive moves, disambiguates headings and follows the 
   const flush = () => { while (frames.length) frames.shift()(); };
   try {
     initToc(); flush();
-    assert.equal(mediaQuery, '(max-width: 1279px)');
+    assert.equal(mediaQuery, 'not all and (min-width: 1280px)');
     assert.equal(toc.hidden, false);
     assert.equal(details.open, true);
     assert.equal(toc.parentElement, desktop);

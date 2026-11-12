@@ -4,7 +4,7 @@ export function initNavigation() {
   const close = document.querySelector('.menu-close');
   const scrim = document.querySelector('.menu-scrim');
   if (!menu || !toggle || !close || !scrim) return;
-  const compact = matchMedia('(max-width: 1023px)');
+  const compact = matchMedia('not all and (min-width: 1024px)');
   const eligible = document.body.classList.contains('layout--archive');
   let collapsed = false;
   try { collapsed = localStorage.getItem('hapbok-sidebar-collapsed') === 'true'; } catch {}

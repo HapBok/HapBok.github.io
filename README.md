@@ -14,7 +14,7 @@
 별도의 소개 메뉴는 없습니다. 이전 `/about/` 주소는 `/home/#about`으로 이동합니다.
 
 기록·게시글 화면의 상단 메뉴 버튼으로 데스크톱 사이드바를 접고 펼칠 수 있습니다.
-카테고리 이름은 하위 글 목록 토글이고, 옆의 **전체** 링크는 카테고리 초기 화면입니다.
+카테고리 이름·화살표는 하위 글 목록 토글이고, **폴더 아이콘**은 해당 카테고리 전체 기록으로 이동하는 링크입니다.
 데스크톱 사이드바의 접힘 상태는 브라우저에 저장하며 모바일 서랍과는 별도로 관리합니다.
 
 ## 글을 쓰는 방법
@@ -49,6 +49,7 @@ description: "이 글에서 다루는 내용을 한두 문장으로 적습니다
 
 폴더 이름이 분류를 결정하지 않습니다. 실제 분류는 `categories`로 결정됩니다.
 현재 화면은 첫 번째 카테고리를 기본 분류로 사용하므로 글마다 하나를 지정하는 방식을 권장합니다.
+사이드바에서 짧게 표시할 제목은 Front Matter에 `nav_title: "대표 제목"`으로 지정합니다. 생략하면 원래 제목을 표시하며, 본문 제목·목록·검색 제목은 바뀌지 않습니다.
 
 | 카테고리 키 | 화면 이름 | 주소 |
 | --- | --- | --- |
@@ -146,7 +147,7 @@ Pretendard v1.3.9와 OFL 라이선스는 `assets/fonts/pretendard/`에 있습니
 ~~~powershell
 docker run --rm -v "${PWD}:/site" hapbok-jekyll:local bundle exec jekyll build
 python scripts/check_site.py
-node --test scripts/companions.test.mjs scripts/reading-tools.test.mjs scripts/navigation.test.mjs scripts/motion.test.mjs
+node --test scripts/companions.test.mjs scripts/reading-tools.test.mjs scripts/navigation.test.mjs scripts/motion.test.mjs scripts/toc.test.mjs
 ~~~
 
 추가 브라우저 검증용 글은 `python scripts/make_qa_fixture.py`로 `tmp/`에 별도 생성합니다.
@@ -157,7 +158,8 @@ GitHub Pages 반영 후 새로고침하고, Actions 빌드 결과를 확인합�
 
 ## 큰 화면 정렬과 표지 H 교체
 
-- 게시글 폭은 최대 820px로 유지하고, 글·목차 묶음은 사이드바를 제외한 공간의 가운데에 놓습니다. `_sass/_refinements.scss`의 `.reading-layout`에서 조정합니다.
-- 목차가 없거나 본문 위로 이동한 화면에는 빈 목차 열을 남기지 않습니다.
+- 게시글 폭은 화면 너비와 사이드바 상태에 맞춰 늘고 줄어듭니다. 매우 넓은 화면에서는 가독성을 위해 최대 1600px로 제한합니다. `_sass/_refinements.scss`에서 본문·여백·목차 공간을 조정합니다.
+- 화면 너비가 1280 CSS px 이상이면 목차를 화면 오른쪽에 고정하고, 그보다 좁아지면 본문 위 접이식 목차로 전환합니다. 브라우저 확대·축소에 따라 가용 CSS 너비도 바뀝니다.
+- 목차가 없거나 본문 위로 이동한 화면에는 오른쪽 공간을 따로 남기지 않습니다.
 - 표지 H는 `assets/images/cover/h-emblem-illustrated.png`입니다. `index.md`의 `.cover-emblem`이 불러옵니다.
 - 새 H는 캐릭터와 맞춘 크림·청록·보라 패브릭 일러스트입니다. 생성 도구와 전체 프롬프트는 `docs/asset-sources.json`의 `coverRefresh`에서 확인할 수 있습니다.

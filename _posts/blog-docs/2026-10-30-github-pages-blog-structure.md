@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "GitHub Pages와 Jekyll로 구성한 HapBok 블로그 구조"
+nav_title: "블로그 구조"
 date: 2026-10-30
 categories: [blog-docs]
 tags: [jekyll, github-pages]
@@ -33,7 +34,7 @@ KNIGHTS FRONTIER 활동과 보안·개발 학습 과정을 남기기 위해 개�
 
 소개는 홈의 `/home/#about`에 통합했다. 이전 `/about/` 주소로 접근하면 이 영역으로 이동한다.
 
-사이드바에는 홈, 모든 기록, 여섯 개 카테고리가 있다. **카테고리 이름을 누르면 하위 글 목록을 접고 펼치고**, 옆의 **‘전체’ 링크를 누르면 카테고리 목록 페이지로 이동**한다. 큰 화면에서는 사이드바를 접을 수 있고, 작은 화면에서는 메뉴 서랍으로 탐색한다.
+사이드바에는 홈, 모든 기록, 여섯 개 카테고리가 있다. **카테고리 이름이나 화살표를 누르면 하위 글 목록을 접고 펼치고**, **폴더 아이콘을 누르면 카테고리 전체 기록으로 이동**한다. 하위 목록은 짧은 대표 제목으로 표시한다. 큰 화면에서는 사이드바를 접을 수 있고, 작은 화면에서는 메뉴 서랍으로 탐색한다.
 
 ## Jekyll이 글과 화면을 연결하는 방식
 
@@ -83,7 +84,7 @@ HapBok.github.io/
 
 디자인은 `assets/css/style.scss`가 `_sass`의 파일들을 순서대로 불러오는 방식이다. 색상·글꼴 변수는 `_tokens.scss`, 본문은 `_post.scss`, 반응형 규칙은 `_responsive.scss`에서 관리한다. 마지막에는 `_refinements.scss`가 적용되므로, 화면을 수정할 때는 한 파일의 규칙뿐 아니라 뒤에서 덮어쓰는 규칙도 확인해야 한다.
 
-현재 디자인은 밝은 배경과 Pretendard 글꼴을 사용한다. 큰 화면에서 본문 폭은 최대 820px로 제한하고, 글과 목차 묶음을 사이드바를 제외한 공간의 가운데에 배치한다.
+현재 디자인은 밝은 배경과 Pretendard 글꼴을 사용한다. 본문은 화면 너비와 메뉴 상태에 따라 폭이 조정되고, 넓은 화면의 목차는 본문과 분리해 화면 오른쪽에 고정한다. 화면이 좁아지면 목차는 본문 위 접이식 메뉴로 전환한다.
 
 ## 새 글 작성과 카테고리 분류
 
@@ -164,7 +165,7 @@ docker run --rm --name hapbok-preview -p 127.0.0.1:4000:4000 -v "${PWD}:/site" h
 ```powershell
 docker run --rm -v "${PWD}:/site" hapbok-jekyll:local bundle exec jekyll build
 python scripts/check_site.py
-node --test scripts/companions.test.mjs scripts/reading-tools.test.mjs scripts/navigation.test.mjs scripts/motion.test.mjs
+node --test scripts/companions.test.mjs scripts/reading-tools.test.mjs scripts/navigation.test.mjs scripts/motion.test.mjs scripts/toc.test.mjs
 ```
 
 `check_site.py`는 생성된 페이지의 경로·로컬 자산·앵커·검색 데이터를 검사한다. Node 테스트는 캐릭터·읽기 도구·탐색·모션 관련 동작을 검사한다. 이 명령 목록은 검증 방법을 설명한 것이며, 개별 변경의 검증 결과는 실제 실행 결과로 확인한다.

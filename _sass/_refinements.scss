@@ -1,5 +1,5 @@
-/* A wider shell uses the monitor; article lines stay deliberately readable. */
-:root { --sidebar-width:250px; --page-gutter:clamp(20px,3.4vw,72px); }
+/* Navigation and reading space respond to the available CSS viewport, including browser zoom. */
+:root { --sidebar-width:clamp(220px,16vw,260px); --page-gutter:clamp(20px,2.2vw,56px); --toc-width:clamp(208px,14vw,280px); --reading-gap:clamp(28px,2.4vw,64px); }
 .header-inner,.page-frame { max-width:none; padding-inline:var(--page-gutter); }
 .header-inner { gap:24px; }
 .header-nav { margin-left:16px; }
@@ -14,31 +14,41 @@ body.sidebar-is-collapsed .site-sidebar { width:0; padding-inline:0; border:0; v
 .sidebar-cover-link { display:inline-block; font-size:12px; margin-top:30px; }
 .sidebar-signature { margin-top:20px; }
 .topic-nav { padding-top:20px; margin-top:20px; }
-.folder-row { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; margin:3px 0; border-radius:5px; }
+.folder-row { display:grid; grid-template-columns:36px minmax(0,1fr); align-items:center; margin:4px 0; border-radius:7px; }
 .folder-row.is-current { background:var(--selected); }
-.folder-toggle { display:flex; align-items:center; gap:8px; width:100%; min-width:0; text-align:left; padding:12px 4px; color:var(--text); font-size:15px; line-height:1.6; border:0; border-radius:5px; background:transparent; transition:background-color 160ms,color 160ms; }
+.folder-toggle { display:flex; align-items:center; justify-content:space-between; gap:10px; width:100%; min-width:0; min-height:44px; text-align:left; padding:10px 10px 10px 4px; color:var(--text); font-size:15px; line-height:1.6; border:0; border-radius:5px; background:transparent; transition:background-color 160ms,color 160ms; }
 .folder-toggle:hover { color:var(--link); background:#e8eff5; }
 .folder-row.is-current .folder-toggle { color:var(--link); font-weight:600; }
 .folder-chevron { width:5px; height:5px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(-45deg); transition:transform 180ms; margin:0 3px; flex:0 0 auto; }
 .folder-toggle[aria-expanded="true"] .folder-chevron { transform:rotate(45deg); }
-.folder-icon { flex:0 0 auto; color:var(--muted); }
-.folder-index { font-size:12px; color:var(--muted); padding:8px 4px; text-decoration:none; border-radius:4px; }
+.folder-icon { flex:0 0 auto; }
+.folder-index { display:grid; place-items:center; align-self:stretch; min-height:44px; color:var(--muted); text-decoration:none; border-radius:5px; }
 .folder-index:hover,.folder-index:focus-visible { color:var(--link); background:#dbe8f2; }
-.folder-posts { margin:0 0 10px 16px; padding-left:12px; border-left:1px solid var(--line); }
-.folder-post { display:block; padding:8px 6px; border-radius:4px; font-size:13px; line-height:1.65; text-decoration:none; color:var(--muted); }
+.folder-posts { margin:5px 0 14px 17px; padding-left:12px; border-left:1px solid var(--line); }
+.folder-post { position:relative; display:flex; align-items:center; gap:9px; min-height:40px; padding:9px 10px; margin:3px 0; border-radius:6px; font-size:14px; line-height:1.55; text-decoration:none; color:var(--muted); }
+.folder-post::before { content:""; width:4px; height:4px; border-radius:50%; background:currentColor; flex:0 0 auto; opacity:.45; }
+.folder-post > span { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; }
 .folder-post:hover { color:var(--link); background:var(--selected); }
 .folder-post[aria-current] { background:var(--selected); color:var(--link); font-weight:600; }
+.folder-post[aria-current]::before { opacity:1; }
+.folder-post[aria-current]::after { content:""; position:absolute; inset:10px auto 10px -13px; width:2px; border-radius:2px; background:var(--link); }
 .folder-empty { margin:0; padding:8px 6px; font-size:12px; color:var(--muted); }
 .archive-header { grid-template-columns:minmax(0,1fr) 240px; min-height:165px; }
 .category-character { width:240px; max-height:155px; }
 .archive-tools .search-field { width:min(100%,520px); }
 .archive-copy p { max-width:85ch; }
 .archive-copy h3 { font-size:24px; }
-.reading-layout { width:100%; margin-inline:auto; grid-template-columns:minmax(0,820px); gap:clamp(28px,3vw,60px); justify-content:center; }
-/* Centre the reading group in the space beside the navigation, including on ultrawide displays.
-   An absent or compact table of contents must not reserve an empty column. */
-@media (min-width:1400px) {
-.reading-layout:has(> .page-toc:not([hidden])) { grid-template-columns:minmax(0,820px) 190px; }
+.reading-layout { display:block; width:100%; max-width:none; margin-inline:auto; }
+.post-page { width:100%; max-width:clamp(820px,60vw,1600px); margin-inline:auto; }
+.post-body { font-size:clamp(18px,calc(14px + .25vw),22px); }
+.post-body table { min-width:640px; }
+.post-body th:first-child,.post-body td:first-child { min-width:10ch; overflow-wrap:normal; }
+/* Reserve only the right rail; the article fills the remaining space independently. */
+@media (min-width:1280px) {
+.main-content:has(.reading-layout > .page-toc:not([hidden])) { padding-right:calc(var(--toc-width) + var(--reading-gap)); }
+.reading-layout > .page-toc { position:fixed; top:calc(var(--header-height) + 44px); right:var(--page-gutter); width:var(--toc-width); max-height:calc(100svh - var(--header-height) - 68px); margin:0; padding:0 0 4px 20px; border:0; border-left:1px solid var(--line); border-radius:0; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; }
+.page-toc summary { margin-bottom:18px; }
+.page-toc a { padding-block:6px; }
 }
 .post-description { max-width:70ch; }
 .site-footer { max-width:none; margin-inline:var(--page-gutter); }
@@ -82,8 +92,8 @@ body.sidebar-is-collapsed .site-sidebar { width:0; padding-inline:0; border:0; v
 .home-copy .eyebrow { font-size:15px; }
 .archive-copy h3 { font-size:26px; }
 }
-@media (max-width:1399px) {
-.reading-layout { display:block; max-width:900px; }
+@media (max-width:1279px) {
+.reading-layout,.post-page { max-width:none; }
 .page-toc { position:static; border:1px solid var(--line); border-radius:6px; padding:14px 18px; margin:0 0 32px; max-height:none; }
 .page-toc summary { margin:0; }
 .page-toc summary::after { content:"+"; float:right; color:var(--link); }
@@ -110,6 +120,7 @@ body.sidebar-is-collapsed .site-sidebar { width:min(320px,88vw); }
 .header-nav { gap:20px; }
 .header-actions { gap:0; }
 .main-content { padding-top:34px; }
+.post-body { font-size:17px; }
 .home-intro { grid-template-columns:1fr; gap:28px; }
 .home-copy h1 { font-size:40px; }
 .home-lead { font-size:27px; }

@@ -6,13 +6,12 @@
 {% for category in site.data.categories %}
 <section class="nav-folder" data-folder="{{ category.key }}">
 <div class="folder-row{% if active_category == category.key %} is-current{% endif %}">
-<button class="folder-toggle" type="button" aria-expanded="{% if active_category == category.key %}true{% else %}false{% endif %}" aria-controls="folder-{{ category.key }}" aria-label="{{ category.title }} 게시글 {% if active_category == category.key %}접기{% else %}펼치기{% endif %}">
-<span class="folder-chevron" aria-hidden="true"></span><svg class="folder-icon" viewBox="0 0 20 20" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 5a1 1 0 0 1 1-1h5l2 2h7a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1Z"/></svg><span>{{ category.title }}</span></button>
-<a class="folder-index" href="{{ category.url | relative_url }}" aria-label="{{ category.title }} 전체 목록"{% if page.url == category.url %} aria-current="page"{% endif %}>전체</a>
+<a class="folder-index" href="{{ category.url | relative_url }}" aria-label="{{ category.title }} 전체 기록" title="{{ category.title }} 전체 기록"{% if page.url == category.url %} aria-current="page"{% endif %}><svg class="folder-icon" viewBox="0 0 20 20" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 5a1 1 0 0 1 1-1h5l2 2h7a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1Z"/></svg></a>
+<button class="folder-toggle" type="button" data-folder-title="{{ category.title | escape }}" aria-expanded="{% if active_category == category.key %}true{% else %}false{% endif %}" aria-controls="folder-{{ category.key }}" aria-label="{{ category.title }} 게시글 {% if active_category == category.key %}접기{% else %}펼치기{% endif %}"><span>{{ category.title }}</span><span class="folder-chevron" aria-hidden="true"></span></button>
 </div>
 <div class="folder-posts" id="folder-{{ category.key }}"{% unless active_category == category.key %} hidden{% endunless %}>
 {% assign folder_posts = site.categories[category.key] %}
-{% if folder_posts.size > 0 %}{% for post in folder_posts %}<a class="folder-post" href="{{ post.url | relative_url }}"{% if page.url == post.url %} aria-current="page"{% endif %}>{{ post.title | escape }}</a>{% endfor %}
+{% if folder_posts.size > 0 %}{% for post in folder_posts %}<a class="folder-post" href="{{ post.url | relative_url }}" title="{{ post.title | escape }}"{% if page.url == post.url %} aria-current="page"{% endif %}><span>{{ post.nav_title | default: post.title | escape }}</span></a>{% endfor %}
 {% else %}<p class="folder-empty">기록을 준비하고 있습니다.</p>{% endif %}
 </div>
 </section>

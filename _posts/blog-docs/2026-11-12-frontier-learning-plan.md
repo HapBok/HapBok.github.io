@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "지금까지의 활동을 돌아보며: 부족했던 점과 보완 계획"
+nav_title: "회고와 보완 계획"
 date: 2026-11-12
 categories: [blog-docs]
 tags: [회고, 학습계획, KNIGHTS-FRONTIER]

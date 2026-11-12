@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "지금까지의 활동 정리"
+nav_title: "활동 정리"
 date: 2026-11-12
 categories: [blog-docs]
 tags: [활동정리, 회고, KNIGHTS-FRONTIER]

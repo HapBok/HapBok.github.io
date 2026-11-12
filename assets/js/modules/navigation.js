@@ -74,8 +74,7 @@ export function initNavigation() {
   menu.querySelectorAll('.folder-toggle').forEach(button => {
     const panel = document.getElementById(button.getAttribute('aria-controls'));
     if (!panel) return;
-    const label = button.closest('[data-folder]').querySelector('.folder-index')
-      .getAttribute('aria-label').replace(' 전체 목록', '');
+    const label = button.getAttribute('data-folder-title');
     button.addEventListener('click', () => {
       const expanded = button.getAttribute('aria-expanded') !== 'true';
       button.setAttribute('aria-expanded', String(expanded));

@@ -18,8 +18,8 @@ test('desktop collapse, category disclosure and mobile Escape stay independent',
   const menu = new Element(), toggle = new Element(), close = new Element(), scrim = new Element();
   const folder = new Element(), panel = new Element();
   folder.setAttribute('aria-controls', 'folder-development');
+  folder.setAttribute('data-folder-title', '개발');
   folder.setAttribute('aria-expanded', 'false'); panel.hidden = true;
-  folder.closest = () => ({ querySelector: () => ({ getAttribute: () => '개발 전체 목록' }) });
   menu.querySelectorAll = selector => selector === '.folder-toggle' ? [folder] : [close, folder];
   menu.contains = item => item === close || item === folder;
   const compact = new EventTarget(); compact.matches = false;
@@ -42,6 +42,7 @@ test('desktop collapse, category disclosure and mobile Escape stay independent',
     folder.dispatchEvent(new Event('click'));
     assert.equal(panel.hidden, false);
     assert.equal(folder.getAttribute('aria-expanded'), 'true');
+    assert.equal(folder.getAttribute('aria-label'), '개발 게시글 접기');
     folder.dispatchEvent(new Event('click'));
     assert.equal(panel.hidden, true);
     toggle.dispatchEvent(new Event('click'));

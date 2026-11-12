@@ -8,7 +8,7 @@ export function initToc() {
   const details = toc.querySelector('details');
   const mobileSlot = document.querySelector('[data-mobile-toc]');
   const desktopSlot = toc.parentElement;
-  const compact = matchMedia('(max-width: 1399px)');
+  const compact = matchMedia('(max-width: 1279px)');
   const ids = new Set([...document.querySelectorAll('[id]')].filter(item => !headings.includes(item)).map(item => item.id));
   const links = [];
   headings.forEach((heading, index) => {
@@ -50,12 +50,21 @@ export function initToc() {
       if (heading.getBoundingClientRect().top <= header + 36) current = index;
     });
     if (scrollY > 0 && Math.ceil(scrollY + innerHeight) >= document.documentElement.scrollHeight - 3) current = headings.length - 1;
-    if (active === current) return;
-    active = current;
-    links.forEach((link, index) => {
-      if (index === current) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
-    });
+    if (active !== current) {
+      active = current;
+      links.forEach((link, index) => {
+        if (index === current) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }
+    // Keep a long outline's current entry visible without moving the article or keyboard focus.
+    if (!compact.matches) {
+      const box = links[current].getBoundingClientRect();
+      const panel = toc.getBoundingClientRect();
+      if (box.top < panel.top || box.bottom > panel.bottom) {
+        toc.scrollTop += box.top - panel.top - panel.height / 2 + box.height / 2;
+      }
+    }
   }
   const schedule = () => {
     if (scheduled) return;

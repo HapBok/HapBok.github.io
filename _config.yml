@@ -7,4 +7,4 @@ markdown: kramdown
 highlighter: rouge
 permalink: /posts/:title/
 timezone: Asia/Seoul
-exclude: [README.md, docs, Gemfile, Gemfile.lock, Dockerfile, scripts, tmp, 'tmp-*.log', vendor, image.png]
+exclude: [README.md, docs, Gemfile, Gemfile.lock, Dockerfile, scripts, tmp, 'tmp-*.log', vendor]

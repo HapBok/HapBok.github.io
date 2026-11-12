@@ -64,28 +64,6 @@
       "sourceFile": "exec-ad0dd5ff-97ba-47a0-b647-6b61e56d1759.png",
       "tool": "built-in image_gen",
       "prompt": "Use case: stylized-concept. Production website PNG asset on genuinely TRANSPARENT alpha background, NO labels, NO cell numbers, NO checkerboard drawn into image, no border, no website UI. Match supplied reference's detailed warm crisp pixel-art style and EXACT recognizable dog identities: Happy white Maltese DROP ears round short muzzle, H patch; Boksoon silver/cream Yorkshire huge UPRIGHT ears and tan shaggy muzzle, B patch. Full color, canine paws, no extra limbs. Keep all subjects fully inside with clean transparent margin. Clothing and accessories consistent with specified reference scene. No additional dog. ONE isolated vignette matching scene04 ONLY, Happy mustard H coat tilts head, Boksoon olive B vest peers into an open empty yellow file folder. Curious friendly, not sad. No scenery. Transparent wide800x480."
-    },
-    {
-      "name": "happy-neutral",
-      "reference": "exec-8b96e981-ee98-4080-93fd-350d271d0dcd.png",
-      "sourceFile": "exec-313a54aa-9bcc-429f-9e81-4c3af510e291.png",
-      "tool": "built-in image_gen",
-      "prompt": "Production transparent PNG asset. Extract/recreate ONLY the FIRST upper-left neutral frame's white Maltese Happy from reference sprite sheet, keeping the EXACT same pixel-art face, drop ears, black round goggles above eyes, teal harness with H patch, seated paws down and facing viewer. ONE dog ONLY on transparent alpha; NO atlas, NO text labels other than H; no scenery. Whole body centered inside square canvas, 8% margin each side. This is the static fallback for this exact animated character; preserve identity, proportions, clothing, expression and full natural color."
-    },
-    {
-      "name": "boksoon-neutral",
-      "reference": "exec-28ead3cb-f6fa-4118-888e-89d2779eb650.png",
-      "sourceFile": "exec-78944b42-1a35-40ba-bf95-680875e4300c.png",
-      "tool": "built-in image_gen",
-      "prompt": "Production transparent PNG asset. Extract/recreate ONLY the FIRST upper-left neutral frame's Yorkshire Boksoon from reference sprite sheet, keeping EXACT same pixel-art tan/cream/silver face, huge upright ears, purple/cream B hoodie, seated paws down and facing viewer. ONE dog ONLY transparent alpha; NO atlas or other characters; no labels except B. Whole body centered inside square canvas, 8% margin each side. Static fallback for this exact animated character; preserve proportions, clothing and full natural fur color."
-    },
-    {
-      "name": "cover-h-emblem",
-      "reference": "codex-clipboard-2164a8e8-c802-4d21-bee6-edd1456cc9d7.png",
-      "sourceFile": "exec-d94c9754-567d-44f2-93aa-aaee1557cd24.png",
-      "tool": "built-in image_gen",
-      "prompt": "Use case: stylized-concept. Production website hero illustration asset, NOT a screenshot or full website. Reference image is for the dimensional H composition/material quality only. Create ONE freestanding large architectural letter H, a tasteful contemporary developer personal-brand sculpture. Precise clean softly rounded solid forms, satin porcelain white and muted steel-blue #285C80 facets, restrained deep indigo detailing. Keep the H immediately readable. Less ribbon-like and less tangled than the reference; two substantial upright pillars with a simple connecting crossbar, subtle elegant twist/chamfer but not a flowing knot. Three-quarter view, soft realistic studio lighting, clean premium material without excessive shine or glow. GENUINELY TRANSPARENT alpha backdrop so it will blend into the blog's #F7F8FA background, minimal contact shadow only. Full object inside generous 7% margins, approximately square composition. No typography, slogans, arrows, circles, rings, orbits, buttons, people, animals, scenery or interface elements. The user will put separately animated pet mascots in front of the lower part, so leave the bottom front of the H uncluttered. Not a logo sheet, only one object.",
-      "cleanupPrompt": "BACKGROUND CLEANUP ONLY. Preserve the exact H sculpture shape, colors, scale, composition and canvas dimensions. Remove ALL disconnected white/gray matte residue, flecks and halo outside its physical contour and inside the H's empty openings. The supplied alpha has visibly ugly white fragments above the uprights and in the middle opening: eliminate them to alpha0. Preserve the actual white porcelain surfaces of the sculpture fully opaque. Clean antialiased perimeter, no torn edges or added shapes. Genuinely transparent RGBA background, minimal contact shadow directly below feet only. No redraw, no typography, no new scenery."
     }
   ],
   "refinements": [
@@ -102,8 +80,11 @@
     "file": "assets/images/cover/h-emblem-illustrated.png",
     "tool": "built-in image_gen",
     "source": "exec-66e72259-56a5-4f12-8257-b0826e5e889a.png",
-    "references": ["assets/images/cover/h-emblem.png", "assets/images/characters/coding.png"],
-    "prompt": "Use case: style-transfer / stylized-concept.\nInput image 1 is the EXISTING H website emblem to redesign; image 2 is STYLE REFERENCE ONLY (the dogs).\nCreate a replacement standalone uppercase H emblem for the HapBok blog cover, matching the warm, carefully hand-painted illustrated shading and fine outline style of the two dog mascots. Keep the immediately recognizable upright block H silhouette and three-quarter perspective, centered full object with ample clean transparent margin. Replace cold shiny metal/white porcelain with a soft matte, finely grained clothbound storybook/field-notebook material. Main faces warm pale ivory, left/inner edges muted deep teal like Happy's H harness, right side subtle muted plum like Boksoon's B hoodie, small restrained cream seam/stitched detail only at edges. Sophisticated friendly developer notebook brand object, not toyish candy, not futuristic chrome. Clear thick H, no extra letters, no dogs rendered in this image, no eyes/faces, no ears on the H, no ribbons, no buildings, no foliage, no arrows, no rings, no scenery, no UI. Hand-illustrated softly modeled volume with delicate dark outline, warm shadow and tactile surface that fits the illustrated mascots when placed next to them. Strong simple silhouette, not extra embellishments. True RGBA fully transparent background including both H negative-space openings, no white matte fragments or halo, only very subtle compact contact shadow under feet. Square canvas. It will be used behind separate existing animated dog sprites; leave their foreground empty, do not add dogs. No text other than the H shape."
+    "references": [
+      "assets/images/characters/coding.png"
+    ],
+    "prompt": "Use case: style-transfer / stylized-concept.\nInput image 1 is the EXISTING H website emblem to redesign; image 2 is STYLE REFERENCE ONLY (the dogs).\nCreate a replacement standalone uppercase H emblem for the HapBok blog cover, matching the warm, carefully hand-painted illustrated shading and fine outline style of the two dog mascots. Keep the immediately recognizable upright block H silhouette and three-quarter perspective, centered full object with ample clean transparent margin. Replace cold shiny metal/white porcelain with a soft matte, finely grained clothbound storybook/field-notebook material. Main faces warm pale ivory, left/inner edges muted deep teal like Happy's H harness, right side subtle muted plum like Boksoon's B hoodie, small restrained cream seam/stitched detail only at edges. Sophisticated friendly developer notebook brand object, not toyish candy, not futuristic chrome. Clear thick H, no extra letters, no dogs rendered in this image, no eyes/faces, no ears on the H, no ribbons, no buildings, no foliage, no arrows, no rings, no scenery, no UI. Hand-illustrated softly modeled volume with delicate dark outline, warm shadow and tactile surface that fits the illustrated mascots when placed next to them. Strong simple silhouette, not extra embellishments. True RGBA fully transparent background including both H negative-space openings, no white matte fragments or halo, only very subtle compact contact shadow under feet. Square canvas. It will be used behind separate existing animated dog sprites; leave their foreground empty, do not add dogs. No text other than the H shape.",
+    "referenceNote": "생성 당시 이전 H 이미지를 형태 참고용으로 함께 사용했다. 현재 사용하지 않는 이전 H 파일은 저장소 정리 과정에서 삭제했다."
   },
   "font": {
     "name": "Pretendard Variable",

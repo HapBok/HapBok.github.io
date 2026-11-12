@@ -75,7 +75,7 @@ HapBok.github.io/
 ├─ _config.yml              # 사이트 설정과 게시글 URL 규칙
 ├─ Dockerfile               # 로컬 Jekyll 미리보기 환경
 ├─ README.md                # 작성·수정·미리보기 안내
-├─ docs/                    # 구조 변경 기록과 이미지 생성 정보
+├─ docs/                    # 이미지 생성 정보
 └─ scripts/                 # 빌드 결과 검사와 기능 테스트
 ```
 
@@ -177,5 +177,4 @@ node --test scripts/companions.test.mjs scripts/reading-tools.test.mjs scripts/n
 
 - [HapBok 블로그](https://hapbok.github.io/)
 - [블로그 저장소와 README](https://github.com/HapBok/HapBok.github.io)
-- 저장소의 `docs/redesign-guide.md`: 구조 변경과 검증 기록
 - 저장소의 `docs/asset-sources.json`: 이미지 생성 정보와 프롬프트

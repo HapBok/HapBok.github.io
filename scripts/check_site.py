@@ -9,7 +9,8 @@ from urllib.parse import unquote, urlsplit
 root = Path(sys.argv[1] if len(sys.argv) > 1 else "_site").resolve()
 routes = ["/", "/home/", "/notes/", "/about/", "/development/", "/ctf-wargame/",
           "/bug-bounty/", "/blog-docs/", "/analysis-conference/",
-          "/contest-certificate/", "/posts/github-pages-blog-structure/", "/404.html"]
+          "/contest-certificate/", "/posts/github-pages-blog-structure/",
+          "/posts/frontier-activity-summary/", "/posts/frontier-learning-plan/", "/404.html"]
 
 class Page(HTMLParser):
     def __init__(self):
@@ -81,10 +82,12 @@ if not posts:
 font = root / "assets/fonts/pretendard/PretendardVariable.woff2"
 if font.read_bytes()[:4] != b"wOF2":
     failures.append("Invalid Pretendard WOFF2")
-for name in ["happy-sprite", "boksoon-sprite", "happy-neutral", "boksoon-neutral", "coding", "reading", "research",
+for name in ["happy-sprite", "boksoon-sprite", "coding", "reading", "research",
              "resting", "terminal", "celebrating", "empty"]:
     if not (root / f"assets/images/characters/{name}.png").is_file():
         failures.append(f"Missing character: {name}")
+if not (root / "assets/images/cover/h-emblem-illustrated.png").is_file():
+    failures.append("Missing illustrated cover emblem")
 if failures:
     print("\n".join(failures))
     sys.exit(1)

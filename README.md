@@ -138,7 +138,7 @@ JavaScript가 없어도 본문과 정적 목록·홈의 분류 링크를 읽을 
 
 현재 사용 자산은 승인된 캐릭터 시트를 바탕으로 내장 이미지 생성 도구로 제작했습니다.
 생성 프롬프트·원본 식별자는 `docs/asset-sources.json`에 정리했습니다.
-원본 사진과 이전 시트는 수정하거나 삭제하지 않았습니다.
+현재 사용하는 이미지와 생성 정보를 보관합니다.
 Pretendard v1.3.9와 OFL 라이선스는 `assets/fonts/pretendard/`에 있습니다.
 
 ## 검증과 배포
@@ -154,11 +154,10 @@ node --test scripts/companions.test.mjs scripts/reading-tools.test.mjs scripts/n
 
 운영 배포는 기존과 같이 `main` 푸시 → GitHub Pages 빌드입니다.
 GitHub Pages 반영 후 새로고침하고, Actions 빌드 결과를 확인합니다.
-자세한 구조 변경 비교와 검증 결과는 `docs/redesign-guide.md`를 참고하세요.
 
 ## 큰 화면 정렬과 표지 H 교체
 
 - 게시글 폭은 최대 820px로 유지하고, 글·목차 묶음은 사이드바를 제외한 공간의 가운데에 놓습니다. `_sass/_refinements.scss`의 `.reading-layout`에서 조정합니다.
 - 목차가 없거나 본문 위로 이동한 화면에는 빈 목차 열을 남기지 않습니다.
-- 표지 H는 `assets/images/cover/h-emblem-illustrated.png`입니다. `index.md`의 `.cover-emblem`이 불러오며, 기존 금속 H 이미지도 보존했습니다.
+- 표지 H는 `assets/images/cover/h-emblem-illustrated.png`입니다. `index.md`의 `.cover-emblem`이 불러옵니다.
 - 새 H는 캐릭터와 맞춘 크림·청록·보라 패브릭 일러스트입니다. 생성 도구와 전체 프롬프트는 `docs/asset-sources.json`의 `coverRefresh`에서 확인할 수 있습니다.

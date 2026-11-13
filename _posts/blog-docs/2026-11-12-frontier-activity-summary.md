@@ -57,6 +57,7 @@ Carbon AX Navigator에서도 팀장을 맡아 해커톤에 참여했다. Agent�
 - [Fit-Bool 프로젝트 Notion](https://app.notion.com/p/AI-Fit-bool-Fit-Bool-Page-Guider-23122f1948db809f959ae9609b1d211a?source=copy_link)
 - [VentI 프로젝트 Notion](https://app.notion.com/p/VentI-HD-Archimedes-Project-2b8fec1bbff6807387ecde57ddccd6c7?source=copy_link)
 - [Carbon AX Navigator 해커톤 Notion](https://app.notion.com/p/3b9fec1bbff680518504c25eea2c388d?source=copy_link)
+- [싹쓰리 - Eye-Tracking 및 BCI 기반 발화보조 서비스 개발](https://app.notion.com/p/25d368ff7ae68016bfbec3aa9ce5995a?source=copy_link)
 
 ## 2. CTF · Wargame
 

@@ -17,6 +17,26 @@
 .post-body img { border-radius:6px; }
 .image-expand { display:block; padding:0; background:none; border:0; max-width:100%; margin:28px auto; cursor:zoom-in; }
 .image-expand img { display:block; }
+.post-body .post-gallery-hint { margin:-6px 0 18px; color:var(--muted); font-size:14px; }
+.post-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; width:100%; max-width:900px; margin:0 auto 28px; padding:16px; border:1px solid var(--line); border-radius:20px; background:linear-gradient(145deg,#edf2f6,#f5f6f8); }
+.post-gallery-card { min-width:0; margin:0; padding:8px; border:1px solid #e2e7ed; border-radius:13px; background:var(--surface); box-shadow:0 3px 6px #24364c06,0 10px 22px #24364c08; }
+.post-gallery-card > img,.post-gallery-card .image-expand { display:block; width:100%; margin:0; border-radius:8px; background:#edf0f4; overflow:hidden; }
+.post-gallery-card > img,.post-gallery-card .image-expand img { display:block; width:100%; height:clamp(140px,15vw,180px); border-radius:8px; object-fit:contain; }
+.post-gallery-card .image-expand { transition:background-color 180ms,box-shadow 180ms; }
+.post-gallery-card .image-expand:hover { background:#e1e8ef; box-shadow:inset 0 0 0 1px #bdcbd7; }
+.post-gallery-card figcaption { padding:12px 5px 5px; font-size:14px; line-height:1.55; }
+.post-gallery-card figcaption strong { display:block; font-size:15px; font-weight:600; }
+.post-gallery-card figcaption span { display:block; margin-top:4px; color:var(--muted); font-size:12px; }
+@media (max-width:600px) {
+  .post-gallery { gap:10px; padding:10px; border-radius:15px; }
+  .post-gallery-card { padding:5px; border-radius:10px; }
+  .post-gallery-card figcaption { padding:9px 3px 4px; }
+  .post-gallery-card figcaption strong { font-size:13px; }
+  .post-gallery-card figcaption span { font-size:11px; }
+}
+@media (max-width:359px) {
+  .post-gallery { grid-template-columns:minmax(0,1fr); }
+}
 .code-block { border:1px solid var(--line); border-radius:6px; background:#f0f2f5; margin:28px 0; overflow:hidden; }
 .code-toolbar { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:8px 16px; background:#e7ecf1; font-size:12px; color:#44596c; }
 .code-copy { border:0; background:transparent; font-size:12px; padding:4px 7px; border-radius:4px; display:inline-flex; align-items:center; gap:6px; }

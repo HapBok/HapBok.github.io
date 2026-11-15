@@ -28,6 +28,11 @@
 .post-gallery-card figcaption { padding:12px 5px 5px; font-size:14px; line-height:1.55; }
 .post-gallery-card figcaption strong { display:block; font-size:15px; font-weight:600; }
 .post-gallery-card figcaption span { display:block; margin-top:4px; color:var(--muted); font-size:12px; }
+.post-media { width:100%; max-width:760px; margin:0 auto 28px; padding:12px; border:1px solid var(--line); border-radius:16px; background:var(--surface); box-shadow:0 8px 24px #24364c0a; }
+.post-media video { display:block; width:100%; max-height:340px; aspect-ratio:16 / 9; object-fit:contain; border-radius:9px; background:#15202e; }
+.post-media figcaption { padding:12px 4px 3px; line-height:1.55; }
+.post-media figcaption strong { display:block; font-size:15px; font-weight:600; }
+.post-media figcaption span { display:block; margin-top:4px; color:var(--muted); font-size:12px; }
 @media (max-width:600px) {
   .post-gallery { gap:10px; padding:10px; border-radius:15px; }
   .post-gallery-card { padding:5px; border-radius:10px; }

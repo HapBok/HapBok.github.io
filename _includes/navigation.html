@@ -10,7 +10,8 @@
 <button class="folder-toggle" type="button" data-folder-title="{{ category.title | escape }}" aria-expanded="{% if active_category == category.key %}true{% else %}false{% endif %}" aria-controls="folder-{{ category.key }}" aria-label="{{ category.title }} 게시글 {% if active_category == category.key %}접기{% else %}펼치기{% endif %}"><span>{{ category.title }}</span><span class="folder-chevron" aria-hidden="true"></span></button>
 </div>
 <div class="folder-posts" id="folder-{{ category.key }}"{% unless active_category == category.key %} hidden{% endunless %}>
-{% assign folder_posts = site.categories[category.key] | sort: 'timeline_date' %}
+{% assign folder_posts = site.categories[category.key] %}
+{% if folder_posts %}{% assign folder_posts = folder_posts | sort: 'timeline_date' %}{% endif %}
 {% if folder_posts.size > 0 %}{% for post in folder_posts %}<a class="folder-post" href="{{ post.url | relative_url }}" title="{{ post.title | escape }}"{% if page.url == post.url %} aria-current="page"{% endif %}><span>{{ post.nav_title | default: post.title | escape }}</span></a>{% endfor %}
 {% else %}<p class="folder-empty">기록을 준비하고 있습니다.</p>{% endif %}
 </div>

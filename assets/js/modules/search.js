@@ -30,7 +30,7 @@ export function initSearch() {
         .then(posts => {
           if (!Array.isArray(posts)) throw new Error('Invalid search index');
           return posts.filter(post => !scope || post.category === scope)
-            .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+            .sort((a, b) => String(a.date).localeCompare(String(b.date)));
         })
         .catch(error => { indexPromise = null; throw error; });
     }

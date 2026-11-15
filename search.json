@@ -3,7 +3,8 @@ layout: null
 permalink: /search.json
 ---
 [
-{% for post in site.posts %}
+{% assign chronological_posts = site.posts | sort: 'timeline_date' %}
+{% for post in chronological_posts %}
 {% assign primary_category = post.categories | first %}
 {% assign category = site.data.categories | where: 'key', primary_category | first %}
 {
@@ -15,7 +16,7 @@ permalink: /search.json
 "categoryTitle": {{ category.title | default: '기록' | jsonify }},
 "categoryUrl": {{ category.url | default: '/notes/' | relative_url | jsonify }},
 "tags": {{ post.tags | jsonify }},
-"date": {{ post.date | date: '%Y-%m-%d' | jsonify }},
+"date": {{ post.timeline_date | default: post.date | date: '%Y-%m-%d' | jsonify }},
 "platform": {{ post.platform | default: '' | jsonify }},
 "field": {{ post.field | default: '' | jsonify }},
 "difficulty": {{ post.difficulty | default: '' | jsonify }}

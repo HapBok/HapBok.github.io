@@ -1,6 +1,6 @@
 <section class="home-latest" aria-labelledby="latest-title">
 <div class="section-heading"><h2 id="latest-title">최근 기록</h2><a href="{{ '/notes/' | relative_url }}">전체 보기</a></div>
-{% assign latest_posts = site.posts | sort: 'date' | reverse | slice: 0, 5 %}
+{% assign latest_posts = site.posts | sort: 'timeline_date' | reverse | slice: 0, 5 | reverse %}
 {% include post-list.html posts=latest_posts %}
 {% if latest_posts.size == 0 %}<p class="empty-message">첫 기록을 준비하고 있습니다.</p>{% endif %}
 </section>

@@ -7,11 +7,21 @@ layout: default
 <a class="back-link" href="{{ category.url | default: '/notes/' | relative_url }}">{% include icon.html name="back" %} {{ category.title | default: '모든 기록' }} 목록</a>
 <header class="post-header"><p class="eyebrow">{{ category.title | default: '기록' }}</p><h1>{{ page.title | escape }}</h1>
 {% if page.description %}<p class="post-description">{{ page.description | escape }}</p>{% endif %}
-<div class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time>{% for tag in page.tags %}<span>{{ tag | escape }}</span>{% endfor %}</div></header>
+{% assign record_date = page.timeline_date | default: page.date %}
+<div class="post-meta"><time datetime="{{ record_date | date_to_xmlschema }}">{% if page.timeline_label %}{{ page.timeline_label | escape }} {% endif %}{{ record_date | date: '%Y.%m.%d' }}</time>{% if page.timeline_label %}<span>작성 {{ page.date | date: '%Y.%m.%d' }}</span>{% endif %}{% for tag in page.tags %}<span>{{ tag | escape }}</span>{% endfor %}</div></header>
 <div data-mobile-toc></div><div class="post-body" data-post-body>{{ content }}</div>
-{% if page.previous or page.next %}<nav class="post-pagination" aria-label="이전·다음 기록">
-{% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><small>이전 기록</small>{{ page.previous.title | escape }}</a>{% endif %}
-{% if page.next %}<a href="{{ page.next.url | relative_url }}"><small>다음 기록</small>{{ page.next.title | escape }}</a>{% endif %}
+{% assign chronological_posts = site.posts | sort: 'timeline_date' %}
+{% assign previous_post = nil %}{% assign next_post = nil %}
+{% for record in chronological_posts %}
+{% if record.url == page.url %}
+{% if forloop.index0 > 0 %}{% assign previous_index = forloop.index0 | minus: 1 %}{% assign previous_post = chronological_posts[previous_index] %}{% endif %}
+{% assign next_index = forloop.index0 | plus: 1 %}{% assign next_post = chronological_posts[next_index] %}
+{% break %}
+{% endif %}
+{% endfor %}
+{% if previous_post or next_post %}<nav class="post-pagination" aria-label="이전·다음 기록">
+{% if previous_post %}<a href="{{ previous_post.url | relative_url }}"><small>이전 기록</small>{{ previous_post.title | escape }}</a>{% endif %}
+{% if next_post %}<a href="{{ next_post.url | relative_url }}"><small>다음 기록</small>{{ next_post.title | escape }}</a>{% endif %}
 </nav>{% endif %}
 <div class="post-end" data-reveal-once>{% include character.html name="resting" class="footer-character" %}<p>읽어 주셔서 감사합니다.</p><a href="{{ '/notes/' | relative_url }}">모든 기록 보기</a></div>
 </article>

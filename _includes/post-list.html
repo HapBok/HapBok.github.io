@@ -3,7 +3,8 @@
 {% assign primary_category = post.categories | first %}
 {% assign post_category = site.data.categories | where: 'key', primary_category | first %}
 <li class="archive-item" data-post-url="{{ post.url | relative_url }}">
-<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time>
+{% assign record_date = post.timeline_date | default: post.date %}
+<time datetime="{{ record_date | date_to_xmlschema }}">{{ record_date | date: '%Y.%m.%d' }}</time>
 <div class="archive-copy"><h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
 {% if post.description %}<p>{{ post.description | escape }}</p>{% endif %}
 <div class="record-meta">

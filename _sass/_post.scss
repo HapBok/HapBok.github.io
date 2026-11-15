@@ -19,6 +19,7 @@
 .image-expand img { display:block; }
 .post-body .post-gallery-hint { margin:-6px 0 18px; color:var(--muted); font-size:14px; }
 .post-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; width:100%; max-width:900px; margin:0 auto 28px; padding:16px; border:1px solid var(--line); border-radius:20px; background:linear-gradient(145deg,#edf2f6,#f5f6f8); }
+.post-gallery--single { grid-template-columns:minmax(0,1fr); max-width:440px; }
 .post-gallery-card { min-width:0; margin:0; padding:8px; border:1px solid #e2e7ed; border-radius:13px; background:var(--surface); box-shadow:0 3px 6px #24364c06,0 10px 22px #24364c08; }
 .post-gallery-card > img,.post-gallery-card .image-expand { display:block; width:100%; margin:0; border-radius:8px; background:#edf0f4; overflow:hidden; }
 .post-gallery-card > img,.post-gallery-card .image-expand img { display:block; width:100%; height:clamp(140px,15vw,180px); border-radius:8px; object-fit:contain; }

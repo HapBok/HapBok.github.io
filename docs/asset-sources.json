@@ -91,5 +91,87 @@
     "version": "1.3.9",
     "source": "https://github.com/orioncactus/pretendard",
     "license": "SIL Open Font License 1.1"
-  }
+  },
+  "postPhotos": [
+    {
+      "file": "assets/images/posts/carbon-ax-navigator-hackathon/hackathon-venue.jpg",
+      "sourceFile": "KakaoTalk_20261116_130804056.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "초광역 AI 해커톤 대회장",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    },
+    {
+      "file": "assets/images/posts/carbon-ax-navigator-hackathon/coffee-toast.jpg",
+      "sourceFile": "KakaoTalk_20261116_130804056_01.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "시작 전, 동기들과 커피 한 잔",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    },
+    {
+      "file": "assets/images/posts/carbon-ax-navigator-hackathon/hotel-room.jpg",
+      "sourceFile": "KakaoTalk_20261116_130804056_03.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "잠깐 머물렀던 숙소",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    },
+    {
+      "file": "assets/images/posts/carbon-ax-navigator-hackathon/songdo-view.jpg",
+      "sourceFile": "KakaoTalk_20261116_130804056_06.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "숙소에서 바라본 송도 풍경",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    },
+    {
+      "file": "assets/images/posts/carbon-ax-navigator-hackathon/hackathon-meal-bulgogi.jpg",
+      "sourceFile": "KakaoTalk_20261116_130804056_02.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "해커톤 식사 — 불고기",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    },
+    {
+      "file": "assets/images/posts/carbon-ax-navigator-hackathon/hackathon-meal-bibimbap.jpg",
+      "sourceFile": "KakaoTalk_20261116_130804056_04.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "해커톤 식사 — 돌솥비빔밥",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    },
+    {
+      "file": "assets/images/posts/carbon-ax-navigator-hackathon/hackathon-meal-samgyetang.jpg",
+      "sourceFile": "KakaoTalk_20261116_130804056_05.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "해커톤 식사 — 삼계탕",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    },
+    {
+      "file": "assets/images/posts/carbon-ax-navigator-hackathon/after-hackathon-buffet.jpg",
+      "sourceFile": "KakaoTalk_20261116_130804056_07.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "해커톤을 마친 뒤, 뷔페",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    },
+    {
+      "file": "assets/images/posts/fit-bool-malware-detection/award-ceremony.jpg",
+      "sourceFile": "kisia_수상.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "시상식 날의 상장과 응원 현수막",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    },
+    {
+      "file": "assets/images/posts/fit-bool-malware-detection/completion-and-award.jpg",
+      "sourceFile": "kisia악성코드.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "수료증과 우수상 상장",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    }
+  ]
 }

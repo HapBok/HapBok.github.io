@@ -9,7 +9,7 @@ categories: [development]
 tags: [VentI, HD현대중공업, 해커톤, DXF, VLM, SMACNA, 협업]
 description: "현업의 덕트 정압손실 문제를 도면 분석·AI 분류·계산·시각화로 연결하고, 팀장으로 현직자 멘토와 협업한 경험을 정리했다."
 permalink: /posts/venti-hd-hyundai-hackathon/
-published: false
+published: true
 ---
 
 ## 현업의 문제를 과제로 만나다

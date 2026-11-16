@@ -172,6 +172,46 @@
       "added": "2026-11-17",
       "caption": "수료증과 우수상 상장",
       "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    },
+    {
+      "file": "assets/images/posts/venti-hd-hyundai-hackathon/kickoff-orientation.jpg",
+      "sourceFile": "HD_오티.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "KICK-OFF OT",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    },
+    {
+      "file": "assets/images/posts/venti-hd-hyundai-hackathon/participant-portrait.jpg",
+      "sourceFile": "HD_셀카.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "VentI 팀장으로 참가",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    },
+    {
+      "file": "assets/images/posts/venti-hd-hyundai-hackathon/award-group.jpg",
+      "sourceFile": "HD_수상단체사진.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "최우수상 수상 기념",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    },
+    {
+      "file": "assets/images/posts/venti-hd-hyundai-hackathon/award-board-and-badges.jpg",
+      "sourceFile": "HD현대중공업_판넬.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "상장과 팀의 명찰",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
+    },
+    {
+      "file": "assets/images/posts/venti-hd-hyundai-hackathon/completion-and-award.jpg",
+      "sourceFile": "HD현대중공업.jpg",
+      "source": "User-provided activity photograph",
+      "added": "2026-11-17",
+      "caption": "수료증과 최우수상 상장",
+      "processing": "Original JPEG copied without pixel edits; EXIF orientation preserved"
     }
   ]
 }

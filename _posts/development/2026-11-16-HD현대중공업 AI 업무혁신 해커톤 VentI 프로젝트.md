@@ -80,4 +80,41 @@ VentI 프로젝트로 **HD현대중공업 조선사업부 사업대표상 최우
 - [3D 도면 처리와 모델 활용 검토](https://app.notion.com/p/2d2fec1bbff680589d18cca02c1c2b90)
 - [팀의 연산·시각화 흐름과 코드 기록](https://app.notion.com/p/2ecfec1bbff6801bb83df245b1de9335)
 
-<!-- 초안 검토 메모: 2026-11-16에 프로젝트 노션, 개인 자료, 전달용 integrated_pipeline의 README.md·main.py, 2026-01-24 판넬 원고, 상장 사진을 대조했다. 상장 수상일 2026-02-02를 timeline_date로 사용했다. 기존 활동 기록의 종료일 2026-01-30은 노션의 최종 발표 예정일과 같지만 수상일과 달라, 확정된 전체 참가 기간으로 기재하지 않았다. RAG·에이전트 추천의 최종 시연 연동 범위, 본인이 직접 작성한 모듈·코드, 정량 검증 결과는 추가 확인 대상이다. 특허 문서는 출원·등록 완료 증거로 사용하지 않았다. 사진은 사용자가 직접 첨부할 예정이다. -->
+<!-- 초안 검토 메모: 2026-11-16에 프로젝트 노션, 개인 자료, 전달용 integrated_pipeline의 README.md·main.py, 2026-01-24 판넬 원고, 상장 사진을 대조했다. 상장 수상일 2026-02-02를 timeline_date로 사용했다. 기존 활동 기록의 종료일 2026-01-30은 노션의 최종 발표 예정일과 같지만 수상일과 달라, 확정된 전체 참가 기간으로 기재하지 않았다. RAG·에이전트 추천의 최종 시연 연동 범위, 본인이 직접 작성한 모듈·코드, 정량 검증 결과는 추가 확인 대상이다. 특허 문서는 출원·등록 완료 증거로 사용하지 않았다. 사진 5장은 2026-11-17 사용자 제공 자료로 첨부했다. -->
+
+## 활동 사진
+
+<p class="post-gallery-hint">오리엔테이션부터 최종 성과발표회와 수상까지의 사진을 모았다. 사진을 누르면 크게 볼 수 있다.</p>
+
+### 해커톤의 시작과 참가 기록
+
+<div class="post-gallery" role="group" aria-label="VentI 해커톤 오리엔테이션과 참가 기념 사진">
+  <figure class="post-gallery-card">
+    <img src="/assets/images/posts/venti-hd-hyundai-hackathon/kickoff-orientation.jpg" alt="울산대학교와 HD현대중공업 AI 업무혁신 해커톤의 KICK-OFF OT 현장" loading="lazy" decoding="async">
+    <figcaption><strong>KICK-OFF OT</strong><span>ARCHIMEDES Project 오리엔테이션 현장.</span></figcaption>
+  </figure>
+  <figure class="post-gallery-card">
+    <img src="/assets/images/posts/venti-hd-hyundai-hackathon/participant-portrait.jpg" alt="정장을 입고 VentI 팀장 명찰을 착용한 참가 기념 셀카" loading="lazy" decoding="async">
+    <figcaption><strong>VentI 팀장으로 참가</strong><span>팀장 명찰과 함께 남긴 참가 기념 사진.</span></figcaption>
+  </figure>
+</div>
+
+### 함께 남긴 수상 기록
+
+<div class="post-gallery" role="group" aria-label="VentI 최우수상 수상 단체 사진과 기념 물품">
+  <figure class="post-gallery-card">
+    <img src="/assets/images/posts/venti-hd-hyundai-hackathon/award-group.jpg" alt="최종 성과발표회에서 최우수상 상장과 판넬을 들고 함께 촬영한 VentI 단체 사진" loading="lazy" decoding="async">
+    <figcaption><strong>최우수상 수상 기념</strong><span>최종 성과발표회를 마치고 함께 남긴 단체 사진.</span></figcaption>
+  </figure>
+  <figure class="post-gallery-card">
+    <img src="/assets/images/posts/venti-hd-hyundai-hackathon/award-board-and-badges.jpg" alt="HD현대중공업 사업대표상 최우수상 판넬과 상장, VentI 팀원과 멘토의 명찰" loading="lazy" decoding="async">
+    <figcaption><strong>상장과 팀의 명찰</strong><span>최우수상 판넬과 함께 모아 둔 팀원·멘토의 명찰.</span></figcaption>
+  </figure>
+</div>
+
+<div class="post-gallery post-gallery--single" role="group" aria-label="VentI 수료증과 최우수상 상장">
+  <figure class="post-gallery-card">
+    <img src="/assets/images/posts/venti-hd-hyundai-hackathon/completion-and-award.jpg" alt="울산대학교 AI 업무혁신 해커톤 수료증과 HD현대중공업 최우수상 상장" loading="lazy" decoding="async">
+    <figcaption><strong>수료증과 최우수상 상장</strong><span>수상일은 2026년 2월 2일, 수료증 발급일은 2월 27일이다.</span></figcaption>
+  </figure>
+</div>

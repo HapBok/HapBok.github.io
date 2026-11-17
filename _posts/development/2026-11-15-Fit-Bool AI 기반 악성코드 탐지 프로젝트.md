@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Fit-Bool — PE 파일을 이미지로 바꿔 악성코드를 분류한 경험"
+title: "Fit-Bool - PE 파일을 이미지로 바꿔 악성코드를 분류한 경험"
 nav_title: "Fit-Bool 악성코드 탐지"
 date: 2026-11-15
 timeline_date: "2025-12-19"

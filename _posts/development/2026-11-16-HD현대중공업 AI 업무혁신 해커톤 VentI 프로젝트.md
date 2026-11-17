@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "VentI — HD현대중공업 AI 업무혁신 해커톤에서 덕트 정압손실을 다루다"
+title: "VentI - HD현대중공업 AI 업무혁신 해커톤에서 덕트 정압손실을 다루다"
 nav_title: "VentI 덕트 정압손실 최적화"
 date: 2026-11-16
 timeline_date: "2026-02-02"

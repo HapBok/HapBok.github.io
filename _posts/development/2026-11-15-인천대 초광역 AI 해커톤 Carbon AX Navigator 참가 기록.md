@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "인천대·울산대 초광역 AI 해커톤 — Carbon AX Navigator"
+title: "인천대·울산대 초광역 AI 해커톤 - Carbon AX Navigator"
 nav_title: "Carbon AX Navigator"
 date: 2026-11-15
 timeline_date: "2026-08-14"
@@ -101,15 +101,15 @@ Carbon AX Navigator로 **우수상**을 받았다.
 <div class="post-gallery" role="group" aria-label="해커톤 중 식사 세 장과 종료 후 뷔페">
   <figure class="post-gallery-card">
     <img src="/assets/images/posts/carbon-ax-navigator-hackathon/hackathon-meal-bulgogi.jpg" alt="해커톤 중 제공된 불고기와 밥, 반찬" loading="lazy" decoding="async">
-    <figcaption><strong>해커톤 식사 — 불고기</strong><span>개발 중간에 챙겨 먹었던 한 끼</span></figcaption>
+    <figcaption><strong>해커톤 식사 - 불고기</strong><span>개발 중간에 챙겨 먹었던 한 끼</span></figcaption>
   </figure>
   <figure class="post-gallery-card">
     <img src="/assets/images/posts/carbon-ax-navigator-hackathon/hackathon-meal-bibimbap.jpg" alt="해커톤 중 제공된 채소와 버섯이 담긴 돌솥비빔밥" loading="lazy" decoding="async">
-    <figcaption><strong>해커톤 식사 — 돌솥비빔밥</strong><span>기억에 남은 호텔 식사</span></figcaption>
+    <figcaption><strong>해커톤 식사 - 돌솥비빔밥</strong><span>기억에 남은 호텔 식사</span></figcaption>
   </figure>
   <figure class="post-gallery-card">
     <img src="/assets/images/posts/carbon-ax-navigator-hackathon/hackathon-meal-samgyetang.jpg" alt="해커톤 중 제공된 닭고기와 대추가 담긴 삼계탕" loading="lazy" decoding="async">
-    <figcaption><strong>해커톤 식사 — 삼계탕</strong><span>2박 3일의 일정 사이에 먹은 식사</span></figcaption>
+    <figcaption><strong>해커톤 식사 - 삼계탕</strong><span>2박 3일의 일정 사이에 먹은 식사</span></figcaption>
   </figure>
   <figure class="post-gallery-card">
     <img src="/assets/images/posts/carbon-ax-navigator-hackathon/after-hackathon-buffet.jpg" alt="해커톤 종료 후 호텔 뷔페에서 담은 초밥과 파스타 등의 음식" loading="lazy" decoding="async">

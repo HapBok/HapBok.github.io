@@ -23,7 +23,7 @@ Fit-Bool 프로젝트에서 PE 파일을 이미지로 변환하고 CNN으로 정
 | 논문 | EvilEDR: Repurposing EDR as an Offensive Tool |
 | 저자 | Kotaiba Alachkar, Dirk Gaastra, Eduardo Barbaro, Michel van Eeten, Yury Zhauniarovich |
 | 학회·연도 | USENIX Security 2025 |
-| 게재 페이지 | 587–605 |
+| 게재 페이지 | 587-605 |
 
 USENIX Security 2025에 게재된 논문으로, 원문과 공개 탐지 자료를 함께 참고했다. [[1]](https://www.usenix.org/conference/usenixsecurity25/presentation/alachkar)
 
@@ -180,16 +180,16 @@ Fit-Bool에서는 파일의 특징과 정상·악성 분류의 관계를 다루�
 
 ## 참고 자료
 
-1. [EvilEDR 공식 게재 정보와 연구 개요 — USENIX Security 2025](https://www.usenix.org/conference/usenixsecurity25/presentation/alachkar)
-2. [EvilEDR 논문 원문 — 위협 모델 §3, 평가 §5, 방어 §6, 한계 §7](https://www.usenix.org/system/files/usenixsecurity25-alachkar.pdf)
-3. [EvilEDR 아티팩트 부록 — 탐지 자료와 검증 절차](https://www.usenix.org/system/files/usenixsecurity25-appendix-alachkar.pdf)
-4. [Microsoft Learn — 코드 서명과 무결성](https://learn.microsoft.com/en-us/windows/win32/seccrypto/cryptography-tools)
-5. [Microsoft Sysinternals — Sysmon과 이벤트 ID 6](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)
+1. [EvilEDR 공식 게재 정보와 연구 개요 - USENIX Security 2025](https://www.usenix.org/conference/usenixsecurity25/presentation/alachkar)
+2. [EvilEDR 논문 원문 - 위협 모델 §3, 평가 §5, 방어 §6, 한계 §7](https://www.usenix.org/system/files/usenixsecurity25-alachkar.pdf)
+3. [EvilEDR 아티팩트 부록 - 탐지 자료와 검증 절차](https://www.usenix.org/system/files/usenixsecurity25-appendix-alachkar.pdf)
+4. [Microsoft Learn - 코드 서명과 무결성](https://learn.microsoft.com/en-us/windows/win32/seccrypto/cryptography-tools)
+5. [Microsoft Sysinternals - Sysmon과 이벤트 ID 6](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)
 6. [공개 Sigma 드라이버 탐지 규칙](https://zenodo.org/records/15116409/files/Sigma_EvilEDR_drivers.yaml?download=1)
 7. [EvilEDR 공개 아티팩트 README](https://zenodo.org/records/15116409/files/README.md?download=1)
-8. [Incalmo — 저자 제공 소개와 논문 링크](https://keanelucas.com/publications/2025-05-16-feasibility-llms-autonomous-network-attacks)
+8. [Incalmo - 저자 제공 소개와 논문 링크](https://keanelucas.com/publications/2025-05-16-feasibility-llms-autonomous-network-attacks)
 
 ## 관련 활동 기록
 
-- [Fit-Bool — PE 파일을 이미지로 바꿔 악성코드를 분류한 경험](/posts/fit-bool-malware-detection/)
+- [Fit-Bool - PE 파일을 이미지로 바꿔 악성코드를 분류한 경험](/posts/fit-bool-malware-detection/)
 - [지금까지의 활동을 돌아보며: 부족했던 점과 보완 계획](/posts/frontier-learning-plan/)

@@ -22,3 +22,7 @@
   title: 공모전 · 자격증
   url: /contest-certificate/
   character: celebrating
+- key: security-scrap
+  title: 보안이슈 스크랩
+  url: /security-scrap/
+  character: research

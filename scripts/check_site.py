@@ -9,7 +9,7 @@ from urllib.parse import unquote, urlsplit
 root = Path(sys.argv[1] if len(sys.argv) > 1 else "_site").resolve()
 routes = ["/", "/home/", "/notes/", "/about/", "/development/", "/ctf-wargame/",
           "/bug-bounty/", "/blog-docs/", "/analysis-conference/",
-          "/contest-certificate/", "/posts/github-pages-blog-structure/",
+          "/contest-certificate/", "/security-scrap/", "/posts/github-pages-blog-structure/",
           "/posts/frontier-activity-summary/", "/posts/frontier-learning-plan/", "/404.html"]
 
 class Page(HTMLParser):

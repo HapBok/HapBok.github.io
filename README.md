@@ -62,6 +62,7 @@ description: "이 글에서 다루는 내용을 한두 문장으로 적습니다
 | blog-docs | 블로그 · 기술문서 | /blog-docs/ |
 | analysis-conference | 논문 · 컨퍼런스 | /analysis-conference/ |
 | contest-certificate | 공모전 · 자격증 | /contest-certificate/ |
+| security-scrap | 보안이슈 스크랩 | /security-scrap/ |
 
 CTF 글에는 필요할 때만 `platform`, `field`, `difficulty`를 추가합니다.
 글 주소는 기존과 같이 `/posts/파일명의-slug/`입니다. 폴더를 옮겨도 slug가 같으면 주소는 유지됩니다.
